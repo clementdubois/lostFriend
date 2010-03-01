@@ -1,0 +1,47 @@
+<h1>Editer votre profil</h1>
+
+<% form_for([current_member]) do |f| %>
+  <%= f.error_messages %>
+
+  <div class="grey line">
+    <%= f.label 'email', 'Email' %>
+    <%= f.text_field :email%>
+  </div>
+  <div class="line">
+    <%= f.label 'last_name', 'Nom de famille' %>
+    <%= f.text_field :last_name%>
+  </div>
+  <div class="line">
+      <%= submit_tag 'Editer' %>
+  </div>
+<% end %>
+
+
+<h2>Vos amis</h2>
+
+<ul>
+  <% for friend in @friends %>
+    <li>
+      <%=h friend.first_name+" "+friend.last_name %>
+    </li>  
+  <% end %>
+</ul>
+
+<h2>Amis qui attendent votre confirmation</h2>
+<ul>
+  <% for member in @waiting_for_acceptance %>
+    <li>
+      <%=h member.first_name+" "+member.last_name %>
+    </li>  
+  <% end %>
+</ul>
+
+
+<h2>Amis en attente de confirmation</h2>
+<ul>
+  <% for member in @waiting_for_my_acceptance %>
+    <li>
+      <%=h member.first_name+" "+member.last_name %>
+    </li>  
+  <% end %>
+</ul>

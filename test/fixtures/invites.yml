@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  person_id: 1
+  person_id_friend: 1
+  code: MyString
+  message: MyText
+  is_accepted: false
+  accepted_at: 2010-02-27 16:18:12
+
+two:
+  person_id: 1
+  person_id_friend: 1
+  code: MyString
+  message: MyText
+  is_accepted: false
+  accepted_at: 2010-02-27 16:18:12

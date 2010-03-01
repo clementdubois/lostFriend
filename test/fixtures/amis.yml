@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member1_id: 1
+  member2_id: 1
+  etatDemande: MyString
+
+two:
+  member1_id: 1
+  member2_id: 1
+  etatDemande: MyString

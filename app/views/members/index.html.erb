@@ -1,0 +1,15 @@
+<h1>Liste des étudiants</h1>
+
+<ul>
+  
+  <% for member in @members %>
+    <li>
+      
+        <%=h member.first_name+" "+member.last_name %>
+        
+        <%= link_to "Faire une demande d'ami", invites_path(:member_target => member), :method => :post %>
+      
+    </li>
+  <% end %>
+  
+</ul>

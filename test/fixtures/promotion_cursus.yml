@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_id: 1
+  etablissement_id: 1
+  anneeDebut: 2010-02-17
+  anneeFin: 2010-02-17
+  diplomeObtenu: MyString
+
+two:
+  member_id: 1
+  etablissement_id: 1
+  anneeDebut: 2010-02-17
+  anneeFin: 2010-02-17
+  diplomeObtenu: MyString

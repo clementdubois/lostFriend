@@ -1,0 +1,8 @@
+<% if logged_in? -%>
+  <div id="member-bar-greeting">Connecté en tant que <%= link_to_current_member :content_method => :login %></div>
+  <div id="member-bar-action"  >(<%= link_to "Deconnection", logout_path, { :title => "Log out" }    %>)</div>
+<% else -%>
+  <div id="member-bar-greeting"><%= link_to_login_with_IP 'Pas connecté', :style => 'border: none;' %></div>
+  <div id="member-bar-action"  ><%= link_to "Se connecter",  login_path,  { :title => "Log in" } %> /
+                               <%= link_to "S'inscrire", signup_path, { :title => "Create an account" } %></div>
+<% end -%>

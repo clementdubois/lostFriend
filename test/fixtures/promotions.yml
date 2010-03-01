@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  diplome: MyString
+  annee: 2010-02-17
+
+two:
+  diplome: MyString
+  annee: 2010-02-17

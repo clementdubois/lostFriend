@@ -1,0 +1,43 @@
+<h1>S'inscrire sur LostFriend</h1>
+<% @member.password = @member.password_confirmation = nil %>
+
+<%= error_messages_for :member %>
+<% form_for :member, :url => members_path do |f| -%>
+
+<p><%= label_tag 'first_name', 'Prénom *' %><br/>
+<%= f.text_field :first_name %></p>
+
+<p><%= label_tag 'last_name', 'Nom *' %><br/>
+<%= f.text_field :last_name %></p>
+
+<p><%= label_tag 'civil_state', 'Etat civil *' %><br/>
+<%= f.text_field :civil_state %></p>
+
+<p><%= label_tag 'activation_code', 'Code d\'activation *' %><br/>
+<%= f.text_field :activation_code %></p>
+
+<p><%= label_tag 'login', 'Pseudo *' %><br/>
+<%= f.text_field :login %></p>
+
+<p><%= label_tag 'region', 'Region' %><br/>
+<%= f.text_field :region %></p>
+
+<p><%= label_tag 'town', 'Ville' %><br/>
+<%= f.text_field :town %></p>
+
+<p><%= label_tag 'zipcode', 'Code postal' %><br/>
+<%= f.text_field :zipcode %></p>
+
+<p><%= label_tag 'email', 'Email' %><br/>
+<%= f.text_field :email %></p>
+
+<p><%= label_tag 'password', 'Mot de passe *' %><br/>
+<%= f.password_field :password %></p>
+
+<p><%= label_tag 'password_confirmation', 'Confirmer le mot de passe *' %><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= submit_tag "S'inscrire" %></p>
+
+<p>Les champs suivis d'une étoile * sont obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter'<p>
+<% end -%>

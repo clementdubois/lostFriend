@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>vendor/plugins/acts_as_network/README
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Sat Feb 27 16:10:47 +0100 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>acts_as_network</h1>
+<p>
+acts_as_network is intended to simplify the definition and storage of
+reciprocal relationships between entities using ActiveRecord, exposing a
+&quot;network&quot; of 2-way connections between records. It does this in
+DRY way using only <b>a single record</b> in a
+<tt>has_and_belongs_to_many</tt> join table or <tt>has_many :through</tt>
+join model. Thus, there is no redundancy and you need only one instance of
+an association or join model to represent both directions of the
+relationship.
+</p>
+<p>
+This is especially useful for social networks where a &quot;friend&quot;
+relationship in one direction implies the reverse relationship (when Jack
+is a friend of Jane then Jane should also be a friend of Jack).
+</p>
+<p>
+<a href="http://www.zetetic.net">Zetetic LLC</a> extracted acts_as_network
+from <a href="http://www.gopingme.com">PingMe</a> where it drives the
+social networking features of the site.
+</p>
+<h2>INSTALLATION (git on edge rails)</h2>
+<pre>
+  % cd rails_project_path
+  % ./script/plugin install git://github.com/sjlombardo/acts_as_network.git
+  % rake doc:plugins
+</pre>
+<h2>INSTALLATION (subversion, rails &lt;= 2.0.2))</h2>
+<pre>
+  % cd rails_project_path
+  % script/plugin source http://actsasnetwork.rubyforge.org/svn/plugins
+  % script/plugin install acts_as_network
+  % rake doc:plugins
+</pre>
+<h2>GitHub</h2>
+<pre>
+  http://github.com/sjlombardo/acts_as_network/tree/master
+</pre>
+<h1>INTRODUCTION</h1>
+<p>
+The usual way of representing network relationships in a database is to use
+an intermediate, often self-referential, join table (HABTM). For example
+one might define a simple person type
+</p>
+<pre>
+  create_table :people, :force =&gt; true do |t|
+    t.column :name, :string
+  end
+</pre>
+<p>
+and then a join table to store the friendship relation
+</p>
+<pre>
+  create_table :friends, {:id =&gt; false} do |t|
+    t.column :person_id, :integer, :null =&gt; false
+    t.column :person_id_friend, :integer, :null =&gt; false      # target of the relationship
+  end
+</pre>
+<p>
+Unfortunately this model requires TWO rows in the intermediate table to
+make a relationship bi-directional
+</p>
+<pre>
+  jane = Person.create(:name =&gt; 'Jane')
+  jack = Person.create(:name =&gt; 'Jack')
+
+  jane.friends &lt;&lt; jack              # Jack is Janes friend
+  jane.friends.include?(jack)    =&gt;  true
+</pre>
+<p>
+Clearly Jack is Jane&#8216;s friend, yet Jane is <b>not</b> Jack&#8216;s
+friend
+</p>
+<pre>
+  jack.friends.include?(jane)    =&gt; false
+</pre>
+<p>
+unless you need to explicitly define the reverse relation
+</p>
+<pre>
+  jack.friends &lt;&lt; jane
+</pre>
+<p>
+Of course, this isn&#8216;t horrible, and can in fact be implemented in a
+fairly DRY way using association callbacks. However, things get more
+complicated when you consider disassociation (what to do when Jane
+doesn&#8216;t want to be friends with Jack any more), or the very common
+case where you want to express the relationship through a more complicated
+join model via <tt>has_many :through</tt>
+</p>
+<pre>
+  create_table :invites do |t|
+    t.column :person_id, :integer, :null =&gt; false           # source of the relationship
+    t.column :person_id_friend, :integer, :null =&gt; false    # target of the relationship
+    t.column :code, :string                                 # random invitation code
+    t.column :message, :text                                # invitation message
+    t.column :is_accepted, :boolean
+    t.column :accepted_at, :timestamp                       # when did they accept?
+  end
+</pre>
+<p>
+In this case creating a reverse relationship is painful, and depending on
+validations might require the duplication of multiple values, making the
+data model decidedly un-DRY.
+</p>
+<h2>Using acts_as_network</h2>
+<p>
+Acts As Network DRYs things up by representing only a single record in a
+<tt>has_and_belongs_to_many</tt> join table or <tt>has_many :through</tt>
+join model. Thus, you only need one instance of an association or join
+model to represent both directions of the relationship.
+</p>
+<h2>With HABTM</h2>
+<p>
+For a HABTM style relationship, it&#8216;s as simple as
+</p>
+<pre>
+  class Person &lt; ActiveRecord::Base
+    acts_as_network :friends, :join_table =&gt; :friends
+  end
+</pre>
+<p>
+In this case <tt>acts_as_network</tt> will expose three new properies on
+the Person model
+</p>
+<pre>
+  me.friends_out        # friends where I have originated the friendship relationship
+                        # target in another entry (people I consider friends)
+
+  me.friends_in         # friends where a different entry has originated the freindship
+                        # with me (people who consider me a friend)
+
+  me.friends            # the union of the two sets, that is all people who I consider
+                        # friends and all those who consider me a friend
+</pre>
+<p>
+Thus
+</p>
+<pre>
+  jane = Person.create(:name =&gt; 'Jane')
+  jack = Person.create(:name =&gt; 'Jack')
+
+  jane.friends_out &lt;&lt; jack                  # Jane adds Jack as a friend
+  jane.friends.include?(jack)    =&gt;  true   # Jack is Janes friend
+  jack.friends.include?(jane)    =&gt;  true   # Jane is also Jack's friend!
+</pre>
+<h2>With a join model</h2>
+<p>
+This may seem more natural when considering a join style with a proper
+Invite model. In this case one person will &quot;invite&quot; another
+person to be friends.
+</p>
+<pre>
+  class Invite &lt; ActiveRecord::Base
+    belongs_to :person
+    belongs_to :person_target, :class_name =&gt; 'Person', :foreign_key =&gt; 'person_id_target'        # the target of the friend relationship
+    validates_presence_of :person, :person_target
+  end
+
+  class Person &lt; ActiveRecord::Base
+    acts_as_network :friends, :through =&gt; :invites, :conditions =&gt; &quot;is_accepted = 't'&quot;
+  end
+</pre>
+<p>
+In this case <tt>acts_as_network</tt> implicitly defines five new properies
+on the Person model
+</p>
+<pre>
+  person.invites_out        # has_many invites originating from me to others
+  person.invites_in         # has_many invites orginiating from others to me
+  person.friends_out        # has_many friends :through outbound accepted invites from me to others
+  person.friends_in         # has_many friends :through inbound accepted invites from others to me
+  person.friends            # the union of the two friend sets - all people who I have
+                        # invited and all the people who have invited me
+</pre>
+<p>
+Thus
+</p>
+<pre>
+  jane = Person.create(:name =&gt; 'Jane')
+  jack = Person.create(:name =&gt; 'Jack')
+
+  # Jane invites Jack to be friends
+  invite = Invite.create(:person =&gt; jane, :person_target =&gt; jack, :message =&gt; &quot;let's be friends!&quot;)
+
+  jane.friends.include?(jack)    =&gt;  false   # Jack is not yet Jane's friend
+  jack.friends.include?(jane)    =&gt;  false   # Jane is not yet Jack's friend either
+
+  invite.is_accepted = true  # Now Jack accepts the invite
+  invite.save and jane.reload and jack.reload
+
+  jane.friends.include?(jack)    =&gt;  true   # Jack is Janes friend now
+  jack.friends.include?(jane)    =&gt;  true   # Jane is also Jacks friend
+</pre>
+<p>
+For more details and specific options see <a
+href="../../../../classes/Zetetic/Acts/Network/ClassMethods.html">Zetetic::Acts::Network::ClassMethods</a>
+</p>
+<p>
+The applications of this plugin to social network situations are fairly
+obvious, but it should also be usable in the general case to represent
+inherant bi-directional relationships between entities.
+</p>
+<h1>TESTS</h1>
+<p>
+The plugin&#8216;s unit tests are located in <tt>test</tt> directory under
+<tt>vendor/plugins/acts_as_network</tt>. Run:
+</p>
+<pre>
+  [%] cd vendor/plugins/acts_as_network
+  [%] ruby test/network_test.rb
+</pre>
+<p>
+This will create a temporary sqlite3 database, a number of tables, fixture
+data, and run the tests. You can delete the sqlite database when you are
+done.
+</p>
+<pre>
+  [%] rm acts_as_network.test.db
+</pre>
+<p>
+The test suite requires sqlite3.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

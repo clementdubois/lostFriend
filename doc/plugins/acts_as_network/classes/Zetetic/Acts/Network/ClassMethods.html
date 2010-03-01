@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Zetetic::Acts::Network::ClassMethods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Zetetic::Acts::Network::ClassMethods</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/vendor/plugins/acts_as_network/lib/zetetic/acts/network_rb.html">
+                vendor/plugins/acts_as_network/lib/zetetic/acts/network.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000001">acts_as_network</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="#M000001" class="method-signature">
+          <span class="method-name">acts_as_network</span><span class="method-args">(relationship, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h1><a href="ClassMethods.html#M000001">acts_as_network</a></h1>
+<p>
+ActsAsNetork expects a few things to be present before it is called.
+Namely, you need to establish the existance of either
+</p>
+<ol>
+<li>a HABTM join table; or
+
+</li>
+<li>an intermediate Join model
+
+</li>
+</ol>
+<h2>HABTM</h2>
+<p>
+In the first case, <tt><a
+href="ClassMethods.html#M000001">acts_as_network</a></tt> will assume that
+your HABTM table is named in a self-referential manner based on the model
+name. i.e. if your model is called <tt>Person</tt> it will assume the HABTM
+join table is called <tt>people_people</tt>. It will also default the
+<tt>foreign_key</tt> column to be named after the model:
+<tt>person_id</tt>. The default <tt>association_foreign_key</tt> column
+will be the <tt>foreign_key</tt> name with <tt>_target</tt> appended.
+</p>
+<pre>
+  acts_as_network :friends
+</pre>
+<p>
+You can override any of these options in your call to <tt><a
+href="ClassMethods.html#M000001">acts_as_network</a></tt>. The following
+will use a join table named <tt>friends</tt> with a foreign key of
+<tt>person_id</tt> and an association foreign key of <tt>friend_id</tt>
+</p>
+<pre>
+  acts_as_network :friends, :join_table =&gt; :friends, :foreign_key =&gt; 'person_id', :association_foreign_key =&gt; 'friend_id'
+</pre>
+<h2>Join Model</h2>
+<p>
+In the second case <tt><a
+href="ClassMethods.html#M000001">acts_as_network</a></tt> will need to be
+told which model to use to perform the join - this is accomplished by
+passing a symbol for the join model to the <tt>:through</tt> option. So,
+with a join model called invites use:
+</p>
+<pre>
+  acts_as_network :friends, :through =&gt; :invites
+</pre>
+<p>
+The same assumptions are made relative to the foreign_key and
+association_foreign_key columns, which can be overriden using the same
+options. It may be useful to include <tt>:conditions</tt> as well depending
+on the specific requirements of the join model. The following will create a
+network relation using a join model named <tt>Invite</tt> with a
+foreign_key of <tt>person_id</tt>, an association_foreign_key of
+<tt>friend_id</tt>, where the Invite&#8216;s <tt>is_accepted</tt> field is
+true.
+</p>
+<pre>
+  acts_as_network :friends, :through =&gt; :invites, :foreign_key =&gt; 'person_id',
+                  :association_foreign_key =&gt; 'friend_id', :conditions =&gt; &quot;is_accepted = 't'&quot;
+</pre>
+<p>
+The valid configuration options that can be passed to <tt><a
+href="ClassMethods.html#M000001">acts_as_network</a></tt> follow:
+</p>
+<ul>
+<li><tt>:through</tt> - class to use for has_many :through relationship. If
+omitted <a href="ClassMethods.html#M000001">acts_as_network</a> will fall
+back on a HABTM relation
+
+</li>
+<li><tt>:join_table</tt> - when using a simple HABTM relation, this allows you
+to override the name of the join table. Defaults to <tt>model_model</tt>
+format, i.e. people_people
+
+</li>
+<li><tt>:foreign_key</tt> - name of the foreign key for the origin side of
+relation - i.e. person_id.
+
+</li>
+<li><tt>:association_foreign_key</tt> - name of the foreign key for the target
+side, i.e. person_id_target. Defaults to the same value as
+<tt>foreign_key</tt> with a <tt>_target</tt> suffix
+
+</li>
+<li><tt>:conditions</tt> - optional, standard ActiveRecord SQL contition clause
+
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+     <span class="ruby-comment cmt"># File vendor/plugins/acts_as_network/lib/zetetic/acts/network.rb, line 224</span>
+224:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">acts_as_network</span>(<span class="ruby-identifier">relationship</span>, <span class="ruby-identifier">options</span> = {})
+225:           <span class="ruby-identifier">configuration</span> = { 
+226:             <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">foreign_key</span>, 
+227:             <span class="ruby-identifier">:association_foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{name.foreign_key}_target&quot;</span>, 
+228:             <span class="ruby-identifier">:join_table</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{name.tableize}_#{name.tableize}&quot;</span>
+229:           }
+230:           <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+231:       
+232:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:through</span>].<span class="ruby-identifier">nil?</span>
+233:             <span class="ruby-identifier">has_and_belongs_to_many</span> <span class="ruby-node">&quot;#{relationship}_out&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>,  
+234:               <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:foreign_key</span>], <span class="ruby-identifier">:association_foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:association_foreign_key</span>],
+235:               <span class="ruby-identifier">:join_table</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:join_table</span>], <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:conditions</span>]
+236:           
+237:             <span class="ruby-identifier">has_and_belongs_to_many</span> <span class="ruby-node">&quot;#{relationship}_in&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>,  
+238:               <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:association_foreign_key</span>], <span class="ruby-identifier">:association_foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:foreign_key</span>],
+239:               <span class="ruby-identifier">:join_table</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:join_table</span>], <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:conditions</span>]
+240:           
+241:           <span class="ruby-keyword kw">else</span>
+242:             <span class="ruby-identifier">through_class</span> = <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:through</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">classify</span>
+243:             <span class="ruby-identifier">through_sym</span> = <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:through</span>]
+244:       
+245:             <span class="ruby-comment cmt"># a node has many outbound realationships</span>
+246:             <span class="ruby-identifier">has_many</span> <span class="ruby-node">&quot;#{through_sym}_out&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">through_class</span>, 
+247:               <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:foreign_key</span>]
+248:             <span class="ruby-identifier">has_many</span> <span class="ruby-node">&quot;#{relationship}_out&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">:through</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{through_sym}_out&quot;</span>.<span class="ruby-identifier">to_sym</span>, 
+249:               <span class="ruby-identifier">:source</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{name.tableize.singularize}_target&quot;</span>,  <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:foreign_key</span>],
+250:               <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:conditions</span>]
+251:       
+252:             <span class="ruby-comment cmt"># a node has many inbound relationships</span>
+253:             <span class="ruby-identifier">has_many</span> <span class="ruby-node">&quot;#{through_sym}_in&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">through_class</span>, 
+254:               <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:association_foreign_key</span>]
+255:             <span class="ruby-identifier">has_many</span> <span class="ruby-node">&quot;#{relationship}_in&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">:through</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{through_sym}_in&quot;</span>.<span class="ruby-identifier">to_sym</span>, 
+256:               <span class="ruby-identifier">:source</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">tableize</span>.<span class="ruby-identifier">singularize</span>, <span class="ruby-identifier">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:association_foreign_key</span>],
+257:               <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-identifier">:conditions</span>]
+258:             
+259:             <span class="ruby-comment cmt"># when using a join model, define a method providing a unioned view of all the join</span>
+260:             <span class="ruby-comment cmt"># records. i.e. if People acts_as_network :contacts :through =&gt; :invites, this method</span>
+261:             <span class="ruby-comment cmt"># is defined as def invites</span>
+262:             <span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;acts_as_union :\#{through_sym}, [ :\#{through_sym}_in, :\#{through_sym}_out ]\n&quot;</span>
+263:               
+264:           <span class="ruby-keyword kw">end</span>
+265:        
+266:           <span class="ruby-comment cmt"># define the accessor method for the reciprocal network relationship view itself. </span>
+267:           <span class="ruby-comment cmt"># i.e. if People acts_as_network :contacts, this method is defind as def contacts</span>
+268:           <span class="ruby-identifier">class_eval</span> <span class="ruby-value str">&quot;acts_as_union :\#{relationship}, [ :\#{relationship}_in, :\#{relationship}_out ]\n&quot;</span>
+269:         <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
