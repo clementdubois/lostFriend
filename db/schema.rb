@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(:version => 20100227152421) do
   end
 
   create_table "invites", :force => true do |t|
-    t.integer  "member_id",                           :null => false
-    t.integer  "member_id_target",                    :null => false
+    t.integer  "member_id",        :null => false
+    t.integer  "member_id_target", :null => false
     t.string   "code"
     t.text     "message"
-    t.boolean  "is_accepted",      :default => false
+    t.boolean  "is_accepted"
     t.datetime "accepted_at"
     t.datetime "created_at"
     t.datetime "updated_at"

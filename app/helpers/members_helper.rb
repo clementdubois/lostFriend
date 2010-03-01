@@ -1,5 +1,13 @@
 module MembersHelper
   
+  def member_received(invite)
+    Member.find(invite.member)
+  end
+  
+  def member_sent(invite)
+    Member.find(invite.member_target)
+  end
+  
   #
   # Use this to wrap view elements that the user can't access.
   # !! Note: this is an *interface*, not *security* feature !!

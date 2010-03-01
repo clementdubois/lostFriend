@@ -23,15 +23,19 @@
   <% for friend in @friends %>
     <li>
       <%=h friend.first_name+" "+friend.last_name %>
+      <%= link_to_delete_friendship "Supprimer", friend %>
+      
     </li>  
   <% end %>
 </ul>
 
 <h2>Amis qui attendent votre confirmation</h2>
 <ul>
-  <% for member in @waiting_for_acceptance %>
+  <% for received in @invites_in %>
     <li>
-      <%=h member.first_name+" "+member.last_name %>
+      <%=h member_received(received).first_name+" "+member_received(received).last_name %>
+      <%= link_to_accept_invite "Accepter", received %>
+      <%= link_to_refuse_invite "Refuser", received %>
     </li>  
   <% end %>
 </ul>
@@ -39,9 +43,10 @@
 
 <h2>Amis en attente de confirmation</h2>
 <ul>
-  <% for member in @waiting_for_my_acceptance %>
+  <% for sent in @invites_out %>
     <li>
-      <%=h member.first_name+" "+member.last_name %>
+      <%=h member_sent(sent).first_name+" "+member_sent(sent).last_name %>
+      <%= link_to_cancel_invite "Annuler", sent, "êtes vous sur?" %>
     </li>  
   <% end %>
 </ul>

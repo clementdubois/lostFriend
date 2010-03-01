@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
   before_filter :find_member, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :login_required, :only => [:index, :show, :edit, :update]
 
   def index
     @members = Member.all
@@ -65,19 +66,9 @@ class MembersController < ApplicationController
   def edit
     @member = current_member
     @friends = @member.friends
-    @waiting_for_acceptance 
-    @waiting_for_my_acceptance 
     
-    logger.debug @member.invites_in.to_yaml
-    logger.debug @member.invites_out.to_yaml
-    
-    @member.invites_in.each do |invite|
-      @waiting_for_acceptance += Member.find(invite.member_id_target)
-    end
-    @member.invites_out.each do |invite|
-      @waiting_for_my_acceptance += Member.find(invite.member_id)
-    end
-
+    @invites_in = @member.invites_in.all(:conditions => {:is_accepted => nil})
+    @invites_out = @member.invites_out.all(:conditions => {:is_accepted => nil})
   end
   
   def update
