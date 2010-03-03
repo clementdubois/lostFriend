@@ -1,5 +1,43 @@
 module InvitesHelper
   
+  def can_invite?(sender, receiver)
+    !are_already_friend(sender, receiver) &&
+    !is_already_in_invitation(sender, receiver) &&
+    !is_already_being_invited(sender, receiver) &&
+    !invite_myself(sender, receiver)
+  
+  end
+  
+  def invite_myself(sender, receiver)
+    sender == receiver
+  end
+  
+  def are_already_friend(sender, receiver)
+    sender.friends.include?(receiver)
+  end
+  
+  def is_already_in_invitation(sender, receiver)
+    
+    sender.invites_out.each do |invite|
+      if (invite.member_target == receiver) && invite.accepted_at.nil?
+        return true
+      end
+    end
+    
+    false
+  end
+  
+  def is_already_being_invited(sender, receiver)
+    
+     sender.invites_in.each do |invite|
+        if invite.member == receiver && invite.accepted_at.nil?
+          return true
+        end
+      end
+      
+      false
+  end
+  
   def link_to_accept_invite(title, invite, options={})
     link_to h(title), accept_invite_path(invite), options
   end

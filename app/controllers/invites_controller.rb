@@ -2,6 +2,7 @@ class InvitesController < ApplicationController
   before_filter :current_user_is_sender_required, :only => [:destroy]
   before_filter :current_user_is_target_required, :only => [:accept, :refuse]
   before_filter :current_user_is_implicated_in_invitation, :only => [:cancel]
+  before_filter :invite_must_be_valid, :only => [:create]
   
   def create
     message = current_member.first_name+" "+current_member.last_name+" souhaite devenir votre ami"
@@ -9,10 +10,10 @@ class InvitesController < ApplicationController
     member_target = Member.find(params[:member_target])
     @invite = Invite.create(:member => current_member, :member_target => member_target, :message => message)
     
-    if @invite.save
+    if @invite.save   
       flash[:notice] = "Votre demande à bien été envoyée"
       redirect_to members_path
-    else
+    else      
       flash[:error] = "Impossible d'ajouter cet ami"
       redirect_to members_path
     end
@@ -20,12 +21,13 @@ class InvitesController < ApplicationController
   end
   
   def accept
-    invitation = Invite.find(params[:invite_id])
+    invitation = Invite.find(params[:id])
     invitation.is_accepted = true
+    invitation.accepted_at = Time.now
     invitation.save 
     
     member = Member.find(invitation.member_id)
-    target = current_user
+    target = current_member
     
     member.reload
     target.reload
@@ -35,12 +37,13 @@ class InvitesController < ApplicationController
   end
   
   def refuse
-    invitation = Invite.find(params[:invite_id])
+    invitation = Invite.find(params[:id])
     invitation.is_accepted = false
+    invitation.accepted_at = Time.now
     invitation.save 
     
     member = Member.find(invitation.member_id)
-    target = current_user
+    target = current_member
     
     member.reload
     target.reload
@@ -64,7 +67,7 @@ class InvitesController < ApplicationController
   end
   
   def cancel
-    invitation = Invite.find(params[:invite_id])
+    invitation = Invite.find(params[:id])
     invitation.is_accepted = false
     invitation.save 
     
@@ -80,6 +83,10 @@ class InvitesController < ApplicationController
   
   private
   
+  def invite_must_be_valid
+    @template.can_invite?(current_member, Member.find(params[:member_target]))
+  end
+  
   def current_user_is_implicated_in_invitation
     current_is_sender || current_is_target || access_denied
   end
@@ -93,11 +100,11 @@ class InvitesController < ApplicationController
   end
   
   def current_is_sender
-    current_member.id == Invite.find(params[:invite_id]).member_id
+    current_member.id == Invite.find(params[:id]).member_id
   end
   
   def current_is_target
-    current_member.id == Invite.find(params[:invite_id]).member_id_target
+    current_member.id == Invite.find(params[:id]).member_id_target
   end
   
 

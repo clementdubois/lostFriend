@@ -51,8 +51,8 @@ ActionController::Routing::Routes.draw do |map|
   map.login  '/login',  :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   
-  map.accept_invite '/accept/:invite_id', :controller => 'invites', :action => 'accept'  
-  map.refuse_invite '/refuse/:invite_id', :controller => 'invites', :action => 'refuse'  
-  map.cancel_invite '/cancel/:invite_id', :controller => 'invites', :action => 'cancel'  
+  map.accept_invite '/accept/:id', :controller => 'invites', :action => 'accept'  
+  map.refuse_invite '/refuse/:id', :controller => 'invites', :action => 'refuse'  
+  map.cancel_invite '/cancel/:id', :controller => 'invites', :action => 'cancel'  
   
 end

@@ -1,5 +1,7 @@
 module MembersHelper
   
+  
+  
   def member_received(invite)
     Member.find(invite.member)
   end
