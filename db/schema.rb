@@ -9,7 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227152421) do
+ActiveRecord::Schema.define(:version => 20100303225100) do
+
+  create_table "conversations", :force => true do |t|
+    t.string   "subject",    :default => ""
+    t.datetime "created_at",                 :null => false
+  end
 
   create_table "firms", :force => true do |t|
     t.string   "name"
@@ -45,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20100227152421) do
     t.datetime "updated_at"
   end
 
+  create_table "mail", :force => true do |t|
+    t.integer  "member_id",                                        :null => false
+    t.integer  "message_id",                                       :null => false
+    t.integer  "conversation_id"
+    t.boolean  "read",                          :default => false
+    t.boolean  "trashed",                       :default => false
+    t.string   "mailbox",         :limit => 25
+    t.datetime "created_at",                                       :null => false
+  end
+
   create_table "members", :force => true do |t|
     t.string   "login",                     :limit => 40,  :default => "",        :null => false
     t.string   "first_name",                :limit => 100, :default => "",        :null => false
@@ -67,12 +82,18 @@ ActiveRecord::Schema.define(:version => 20100227152421) do
   add_index "members", ["login"], :name => "index_members_on_login", :unique => true
 
   create_table "messages", :force => true do |t|
-    t.integer  "sender_id"
-    t.integer  "receiver_id"
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "body"
+    t.string   "subject",         :default => ""
+    t.text     "headers"
+    t.integer  "sender_id",                          :null => false
+    t.integer  "conversation_id"
+    t.boolean  "sent",            :default => false
+    t.datetime "created_at",                         :null => false
+  end
+
+  create_table "messages_recipients", :id => false, :force => true do |t|
+    t.integer "message_id",   :null => false
+    t.integer "recipient_id", :null => false
   end
 
   create_table "promotion_curriculum", :force => true do |t|

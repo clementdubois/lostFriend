@@ -6,6 +6,7 @@ class Member < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   acts_as_network :friends, :through => :invites, :conditions => ["is_accepted = ?", true] 
+  acts_as_messageable
   
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

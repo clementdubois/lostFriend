@@ -1,0 +1,23 @@
+<!-- New message -->
+<% form_tag member_messages_path(current_member) do  %>
+  
+  <%= render :partial => "messages/new" %>
+  <%= submit_tag "Envoyer"%>
+<% end %>
+
+<!-- Last messages conversations unread list -->
+<%# form_tag bulk_member_messages_path(current_member) do %>
+
+  <% for conv in @conversations %>
+    <!-- read/unread => class determined by an helper with different design -->
+    <!-- Show the conversations -->
+      <%= render :partial => "conversation", :locals => {:conv => conv } %>
+    <% end %>
+
+  <% end %>
+
+<%#= submit_tag 'supprimer'%>
+
+  
+  
+  

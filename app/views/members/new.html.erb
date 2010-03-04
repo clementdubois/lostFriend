@@ -1,8 +1,9 @@
 <h1>S'inscrire sur LostFriend</h1>
 <% @member.password = @member.password_confirmation = nil %>
 
-<%= error_messages_for :member %>
 <% form_for :member, :url => members_path do |f| -%>
+<%= error_messages_for :member %>
+
 
 <p><%= label_tag 'first_name', 'Prénom *' %><br/>
 <%= f.text_field :first_name %></p>
