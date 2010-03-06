@@ -1,18 +1,27 @@
 <!-- New message -->
-<%= render :partial => "messages/new" %>
+<% form_tag member_messages_path(current_member) do  %>
+  <%= render :partial => "messages/new" %>
+  <%= submit_tag "Envoyer"%>
+<% end %>
 
 
 <!-- Last messages conversations unread list -->
-<%# form_tag bulk_member_messages_path(current_member) do %>
+<% form_tag choose_action_member_messages_path(current_member) do %>
 
   <% for conv in @conversations %>
     <!-- read/unread => class determined by an helper with different design -->
     <!-- Show the conversations -->
+      <p><%= check_box_tag 'checked[conv_ids][]', conv.id %></p>
       <%= render :partial => "conversation", :locals => {:conv => conv } %>
 
   <% end %>
 
-<%#= submit_tag 'supprimer'%>
+  <p><%#= submit_tag 'supprimer', :name => "bulk" %>
+  <%= submit_tag 'lus', :name => "mark_read" %>
+  <%= submit_tag 'non lus', :name => "mark_unread" %></p>
+  
+
+<% end %>
 
   
   

@@ -3,7 +3,6 @@
 <p><b><%= conv.last_message.sender.login %></b><br />
 <%=h conv.subject %><br />
 <%=h conv.last_message.body %><br />
-<%#= check_box_tag 'conv_id[]', conv.id%></p>
 </div>
 <!-- the rest of the conversation (hide with javascript) -->
 <% conv.messages.each do |message| %>
@@ -14,8 +13,5 @@
 <% end %>
 
 <!-- Reply to the conversation (will be show just if we show the entire conversation) -->
-<% form_tag reply_member_messages_path(current_member) do %>
-  <%= render :partial => "response", :locals => {:conv => conv }%>
-  
-  <%= submit_tag "Repondre" %>
-<% end %>
+<%= render :partial => "response", :locals => {:conv => conv }%>
+<%= submit_tag "Repondre", :name => "reply" %>

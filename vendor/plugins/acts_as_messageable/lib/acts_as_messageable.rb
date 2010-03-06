@@ -198,6 +198,12 @@ module Sergi #:nocdoc:
           self.mailbox.mark_as_read(:conversation => conversation)
           return convo_mail
         end
+        
+          def unread_conversation(conversation, options = {})
+            convo_mail = self.mailbox.mail(options.merge(:conversation => conversation))
+            self.mailbox.mark_as_unread(:conversation => conversation)
+            return convo_mail
+          end
       end
 
     end

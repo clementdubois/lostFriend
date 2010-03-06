@@ -17681,3 +17681,2274 @@ Rendered messages/_conversation (3.7ms)
 Rendered layouts/_header (0.1ms)
 Rendered layouts/_footer (0.1ms)
 Completed in 67ms (View: 26, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 10:57:20) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.9ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (1.5ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.4ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+
+ActionView::TemplateError (undefined method `field_for' for #<ActionView::Base:0x2489bb0>) on line #1 of app/views/messages/_response.html.erb:
+1: <% field_for :message do |f| %>
+2: 
+3:   <%= label_tag 'Reponse', :response %>
+4:   <%= text_area_tag 'response[message]'%>
+
+    app/views/messages/_response.html.erb:1
+    app/views/messages/_conversation.html.erb:18
+    app/views/messages/_conversation.html.erb:17
+    app/views/messages/index.html.erb:15
+    app/views/messages/index.html.erb:11:in `each'
+    app/views/messages/index.html.erb:11
+
+Rendered rescues/_trace (114.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 10:57:30) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (1.2ms)
+Rendered messages/_conversation (21.3ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (5.0ms)
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (5.0ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 72ms (View: 30, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-06 11:07:16) [GET]
+  Parameters: {"member_id"=>"5"}
+
+SyntaxError (/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:23: syntax error, unexpected ']', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+      bulk(params[:])
+                    ^
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:25: syntax error, unexpected ']', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+      as_read(params[:])
+                       ^
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:27: syntax error, unexpected ']', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+      as_unread(params[:])
+                         ^
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:105: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (27.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 11:07:35) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.7ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (19.0ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.9ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.8ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 74ms (View: 31, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 11:32:28) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+
+ActionView::TemplateError (undefined method `reply_member_messages_path' for #<ActionView::Base:0x2423b08>) on line #17 of app/views/messages/_conversation.html.erb:
+14: <% end %>
+15: 
+16: <!-- Reply to the conversation (will be show just if we show the entire conversation) -->
+17: <% form_tag reply_member_messages_path(current_member) do %>
+18:   <%= render :partial => "response", :locals => {:conv => conv }%>
+19:   
+20:   <%= submit_tag "Repondre", :name => "reply" %>
+
+    app/views/messages/_conversation.html.erb:17
+    app/views/messages/index.html.erb:15
+    app/views/messages/index.html.erb:11:in `each'
+    app/views/messages/index.html.erb:11
+    app/views/messages/index.html.erb:9
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 11:33:00) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (18.2ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.0ms)
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (2.9ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 137ms (View: 30, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 11:33:31) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.8ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.4ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (17.9ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (4.0ms)
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (2.8ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 76ms (View: 35, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose (for 127.0.0.1 at 2010-03-06 11:33:53) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+
+ActionController::UnknownAction (No action responded to choose. Actions: admin?, as_read, as_unread, bulk, choose_action, create, index, reply, and send_all):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-06 11:34:30) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  
+
+Rendered rescues/_trace (23.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (method_not_allowed)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 11:34:42) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (59.3ms)
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (17.6ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.1ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (2.9ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 130ms (View: 90, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 11:34:46) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read =1 WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18'' at line 1: UPDATE `mail` SET read =1 WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read =1 WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18'' at line 1: UPDATE `mail` SET read =1 WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 11:36:01) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (4.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read =1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` I' at line 1: UPDATE `mail` SET read =1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read =1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` I' at line 1: UPDATE `mail` SET read =1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (109.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 11:36:49) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` IN' at line 1: UPDATE `mail` SET read=1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` IN' at line 1: UPDATE `mail` SET read=1 WHERE (`conditions`.`member_id` = 5 AND `conditions`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 11:37:56) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (113.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#choose_action (for 127.0.0.1 at 2010-03-06 11:42:43) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+
+SyntaxError (/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:71: syntax error, unexpected ')', expecting tASSOC
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:106: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#choose_action (for 127.0.0.1 at 2010-03-06 11:43:36) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+
+SyntaxError (/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:71: syntax error, unexpected ')', expecting tASSOC
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:106: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#choose_action (for 127.0.0.1 at 2010-03-06 11:44:42) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+
+SyntaxError (/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:71: syntax error, unexpected ')', expecting tASSOC
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:106: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (110.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-06 11:45:35) [GET]
+  Parameters: {"member_id"=>"5"}
+
+SyntaxError (/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:71: syntax error, unexpected ')', expecting tASSOC
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:106: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (28.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 11:46:41) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.9ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (17.1ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (4.0ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.5ms)
+Rendered messages/_conversation (2.9ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 66ms (View: 25, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 11:46:48) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conv_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"/l59Ew3dI/zc3/mulzTptLMBGXtDUJKGbcpyk+eY5hI=", "mark_read"=>"lus"}
+  [4;36;1mMail Update (0.0ms)[0m   [0;1mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`conditions`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`conditions`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`conditions`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`conditions`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (59.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-06 17:38:02) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.4ms)
+Rendered layouts/_footer (20.9ms)
+Completed in 192ms (View: 190, DB: 60) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-06 17:38:06) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 62ms (View: 60, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-06 17:38:11) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "login"=>"admin", "password"=>"azerty"}
+  [4;35;1mMember Columns (100.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (39.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 312ms (DB: 140) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-06 17:38:11) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 17:38:43) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;35;1mConversation Load (68.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (24.8ms)
+  [4;35;1mMessage Load (33.0ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.4ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (24.2ms)
+Rendered messages/_conversation (108.5ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.8ms)
+Rendered messages/_conversation (5.8ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.9ms)
+Rendered messages/_conversation (4.1ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 347ms (View: 132, DB: 119) | 200 OK [http://localhost/members/1/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 17:39:06) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.7ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (16.8ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.0ms)
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.0ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 76ms (View: 31, DB: 16) | 200 OK [http://localhost/members/1/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:41:04) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`conditions`.`conversation_id` IN ('15'))' at line 1: UPDATE `mail` SET read=1 WHERE (`conditions`.`conversation_id` IN ('15')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`conditions`.`conversation_id` IN ('15'))' at line 1: UPDATE `mail` SET read=1 WHERE (`conditions`.`conversation_id` IN ('15')) ):
+  app/controllers/messages_controller.rb:70:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-06 17:48:19) [GET]
+  Parameters: {"member_id"=>"1"}
+
+SyntaxError (/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:70: syntax error, unexpected '}', expecting ')'
+    Mail.update_all( "read=true", "conversation_id=#{params[:conv_ids]}"})
+                                                                         ^
+/Users/clement/Ruby/work/lostFriend/app/controllers/messages_controller.rb:105: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (28.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 17:48:28) [GET]
+  Parameters: {"member_id"=>"1"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (16.4ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.2ms)
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.1ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 66ms (View: 26, DB: 14) | 200 OK [http://localhost/members/1/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:48:31) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=true WHERE (conversation_id=1518)' at line 1: UPDATE `mail` SET read=true WHERE (conversation_id=1518) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=true WHERE (conversation_id=1518)' at line 1: UPDATE `mail` SET read=true WHERE (conversation_id=1518) ):
+  app/controllers/messages_controller.rb:70:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (103.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:49:41) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read='true' WHERE (conversation_id='15','18')' at line 1: UPDATE `mail` SET read='true' WHERE (conversation_id='15','18') [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read='true' WHERE (conversation_id='15','18')' at line 1: UPDATE `mail` SET read='true' WHERE (conversation_id='15','18') ):
+  app/controllers/messages_controller.rb:70:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (40.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:50:11) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:70:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (42.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:50:36) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:70:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (38.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:52:32) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) [0m
+  [4;36;1mMail Columns (6.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+--- 
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "18"
+    member_id: "5"
+    read: "1"
+    id: "33"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:18:34
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "18"
+    member_id: "5"
+    read: "1"
+    id: "34"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: sentbox
+    created_at: 2010-03-06 08:18:34
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "19"
+    member_id: "5"
+    read: "1"
+    id: "38"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:19:09
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "19"
+    member_id: "5"
+    read: "1"
+    id: "39"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: sentbox
+    created_at: 2010-03-06 08:19:09
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "22"
+    member_id: "5"
+    read: "0"
+    id: "49"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:20:57
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "24"
+    member_id: "5"
+    read: "1"
+    id: "55"
+    conversation_id: "18"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:28:41
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "24"
+    member_id: "5"
+    read: "1"
+    id: "56"
+    conversation_id: "18"
+    trashed: "0"
+    mailbox: sentbox
+    created_at: 2010-03-06 08:28:41
+  attributes_cache: {}
+
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`conversation_id` IN ('15','18'))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`conversation_id` IN ('15','18')) ):
+  app/controllers/messages_controller.rb:73:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (102.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:53:45) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (1.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) [0m
+  [4;36;1mMail Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+--- 
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "18"
+    member_id: "5"
+    read: "1"
+    id: "33"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:18:34
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "18"
+    member_id: "5"
+    read: "1"
+    id: "34"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: sentbox
+    created_at: 2010-03-06 08:18:34
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "19"
+    member_id: "5"
+    read: "1"
+    id: "38"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:19:09
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "19"
+    member_id: "5"
+    read: "1"
+    id: "39"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: sentbox
+    created_at: 2010-03-06 08:19:09
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "22"
+    member_id: "5"
+    read: "0"
+    id: "49"
+    conversation_id: "15"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:20:57
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "24"
+    member_id: "5"
+    read: "1"
+    id: "55"
+    conversation_id: "18"
+    trashed: "0"
+    mailbox: inbox
+    created_at: 2010-03-06 08:28:41
+  attributes_cache: {}
+
+- !ruby/object:Mail 
+  attributes: 
+    message_id: "24"
+    member_id: "5"
+    read: "1"
+    id: "56"
+    conversation_id: "18"
+    trashed: "0"
+    mailbox: sentbox
+    created_at: 2010-03-06 08:28:41
+  attributes_cache: {}
+
+
+NoMethodError (undefined method `include?' for #<Mail:0x25be878>):
+  app/controllers/messages_controller.rb:73:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:54:28) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.5ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMail Load (4.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) [0m
+  [4;35;1mMail Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+
+NoMethodError (undefined method `ids' for #<Array:0x246c164>):
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (103.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:55:09) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (2.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.4ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) [0m
+19649210
+  [4;36;1mMail Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mMail Update (0.0ms)[0m   [0mMysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`id` IN (33,34,38,39,49,55,56))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`id` IN (33,34,38,39,49,55,56)) [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read=1 WHERE (`mail`.`id` IN (33,34,38,39,49,55,56))' at line 1: UPDATE `mail` SET read=1 WHERE (`mail`.`id` IN (33,34,38,39,49,55,56)) ):
+  app/controllers/messages_controller.rb:73:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:57:41) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('15','18')) [0m
+  [4;36;1mMail Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.5ms)[0m   [0;1mUPDATE `mail` SET `read` = 1 WHERE `id` = 49[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members/5/messages
+Completed in 47ms (DB: 9) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 17:57:41) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.8ms)
+Rendered messages/_conversation (16.6ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.0ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (1.0ms)
+Rendered messages/_conversation (3.7ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 69ms (View: 26, DB: 14) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:59:29) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMail Load (0.4ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15','18')) [0m
+--------new------
+  [4;35;1mMail Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+true
+27
+
+NoMethodError (undefined method `logger_debug' for #<MessagesController:0x253c224>):
+  app/controllers/messages_controller.rb:75:in `as_read'
+  app/controllers/messages_controller.rb:71:in `each'
+  app/controllers/messages_controller.rb:71:in `as_read'
+  app/controllers/messages_controller.rb:25:in `choose_action'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 17:59:39) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15','18')) [0m
+--------new------
+  [4;36;1mMail Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+true
+27
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+27
+--------new------
+true
+28
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+true
+28
+--------new------
+true
+33
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+33
+--------new------
+true
+34
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+34
+--------new------
+true
+38
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+38
+--------new------
+true
+39
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+39
+--------new------
+true
+43
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+43
+--------new------
+true
+44
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+44
+--------new------
+true
+49
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+49
+--------new------
+true
+55
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+55
+--------new------
+true
+56
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+56
+Redirected to http://localhost:3000/members/5/messages
+Completed in 116ms (DB: 7) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 17:59:40) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.3ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (16.4ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.1ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.0ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 72ms (View: 25, DB: 16) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:03:05) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15','18')) [0m
+--------new------
+  [4;36;1mMail Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+true
+27
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+27
+--------new------
+true
+28
+---------------------
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+28
+--------new------
+true
+33
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+33
+--------new------
+true
+34
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+34
+--------new------
+true
+38
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+38
+--------new------
+true
+39
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+39
+--------new------
+true
+43
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+43
+--------new------
+true
+44
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+44
+--------new------
+true
+49
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+49
+--------new------
+true
+55
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+55
+--------new------
+true
+56
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+true
+56
+Redirected to http://localhost:3000/members/5/messages
+Completed in 36ms (DB: 7) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:03:05) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.3ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.5ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (88.7ms)
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.2ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (5.0ms)
+  [4;36;1mMessage Load (0.8ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.0ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 141ms (View: 98, DB: 16) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:03:19) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_unread"=>"non lus"}
+  [4;35;1mMember Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15','18')) [0m
+--------new------
+  [4;36;1mMail Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+true
+27
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.4ms)[0m   [0;1mUPDATE `mail` SET `read` = 0 WHERE `id` = 27[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+
+27
+--------new------
+true
+28
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET `read` = 0 WHERE `id` = 28[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+
+28
+--------new------
+true
+33
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.2ms)[0m   [0;1mUPDATE `mail` SET `read` = 0 WHERE `id` = 33[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+
+33
+--------new------
+true
+34
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 0 WHERE `id` = 34[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+
+34
+--------new------
+true
+38
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.2ms)[0m   [0;1mUPDATE `mail` SET `read` = 0 WHERE `id` = 38[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+
+38
+--------new------
+true
+39
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 0 WHERE `id` = 39[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+
+39
+--------new------
+true
+43
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 0 WHERE `id` = 43[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+
+43
+--------new------
+true
+44
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 0 WHERE `id` = 44[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+
+44
+--------new------
+true
+49
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 0 WHERE `id` = 49[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+
+49
+--------new------
+true
+55
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 0 WHERE `id` = 55[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+
+55
+--------new------
+true
+56
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 0 WHERE `id` = 56[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+
+56
+Redirected to http://localhost:3000/members/5/messages
+Completed in 48ms (DB: 14) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:03:19) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.3ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.8ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (16.1ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.0ms)
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (2.9ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 69ms (View: 25, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:05:18) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.9ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15','18')) [0m
+--------new------
+  [4;35;1mMail Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+
+27
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.5ms)[0m   [0mUPDATE `mail` SET `read` = 1 WHERE `id` = 27[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+true
+27
+--------new------
+
+28
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.2ms)[0m   [0;1mUPDATE `mail` SET `read` = 1 WHERE `id` = 28[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+true
+28
+--------new------
+
+33
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET `read` = 1 WHERE `id` = 33[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+true
+33
+--------new------
+
+34
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 1 WHERE `id` = 34[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+true
+34
+--------new------
+
+38
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 1 WHERE `id` = 38[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+true
+38
+--------new------
+
+39
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 1 WHERE `id` = 39[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+true
+39
+--------new------
+
+43
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 1 WHERE `id` = 43[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+true
+43
+--------new------
+
+44
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 1 WHERE `id` = 44[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+true
+44
+--------new------
+
+49
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.3ms)[0m   [0mUPDATE `mail` SET `read` = 1 WHERE `id` = 49[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+true
+49
+--------new------
+
+55
+---------------------
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMail Update (0.1ms)[0m   [0;1mUPDATE `mail` SET `read` = 1 WHERE `id` = 55[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+true
+55
+--------new------
+
+56
+---------------------
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMail Update (0.1ms)[0m   [0mUPDATE `mail` SET `read` = 1 WHERE `id` = 56[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+true
+56
+Redirected to http://localhost:3000/members/5/messages
+Completed in 48ms (DB: 15) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:05:18) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;36;1mMessage Load (0.6ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMessage Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mMail Load (0.4ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (20.7ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.4ms)
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.3ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 73ms (View: 30, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:14:32) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "bulk"=>"supprimer"}
+  [4;35;1mMember Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15')) [0m
+  [4;36;1mMail Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `mail`[0m
+
+NoMethodError (undefined method `destroy_all' for #<Array:0x2518504>):
+  app/controllers/messages_controller.rb:64:in `bulk'
+  app/controllers/messages_controller.rb:23:in `choose_action'
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:48:17) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "bulk"=>"supprimer"}
+  [4;36;1mMember Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (4.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMail Load (0.5ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15')) [0m
+  [4;35;1mMail Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+
+NoMethodError (undefined method `move_to' for #<Mail:0x240daec>):
+  app/controllers/messages_controller.rb:65:in `bulk'
+  app/controllers/messages_controller.rb:64:in `each'
+  app/controllers/messages_controller.rb:64:in `bulk'
+  app/controllers/messages_controller.rb:23:in `choose_action'
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:57:14) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (510.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.8ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.4ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.9ms)
+Rendered messages/_conversation (18.6ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (5.4ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (3.1ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 588ms (View: 34, DB: 526) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:57:20) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_unread"=>"non lus"}
+  [4;36;1mMember Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`conversation_id` IN ('13','15','18')) [0m
+
+NameError (undefined local variable or method `conv' for #<MessagesController:0x2466610>):
+  app/controllers/messages_controller.rb:83:in `as_unread'
+  app/controllers/messages_controller.rb:82:in `each'
+  app/controllers/messages_controller.rb:82:in `as_unread'
+  app/controllers/messages_controller.rb:27:in `choose_action'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:58:06) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_unread"=>"non lus"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+
+NoMethodError (undefined method `unread_conversation' for #<Member:0x254f810>):
+  app/controllers/messages_controller.rb:83:in `as_unread'
+  app/controllers/messages_controller.rb:82:in `each'
+  app/controllers/messages_controller.rb:82:in `as_unread'
+  app/controllers/messages_controller.rb:27:in `choose_action'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:58:39) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_unread"=>"non lus"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (6.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+
+NoMethodError (undefined method `unread_conversation' for #<Member:0x242258c>):
+  app/controllers/messages_controller.rb:83:in `as_unread'
+  app/controllers/messages_controller.rb:82:in `each'
+  app/controllers/messages_controller.rb:82:in `as_unread'
+  app/controllers/messages_controller.rb:27:in `choose_action'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:58:55) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.5ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (1.6ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.6ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (1.3ms)
+Rendered messages/_conversation (76.4ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.3ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (5.5ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.3ms)
+Rendered layouts/_header (0.4ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 184ms (View: 118, DB: 16) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:58:58) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_unread"=>"non lus"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Load (0.9ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (6))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.3ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (6))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (7))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (7))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (8))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (8))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (9))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (9))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (10))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (10))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (11))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (11))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (12))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (12))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (13))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.9ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (13))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (14))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (14))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (15))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.7ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (15))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (16))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (16))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (17))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (17))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (18))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.6ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (18))) AND (`mail`.member_id = 5) [0m
+Redirected to http://localhost:3000/members/5/messages
+Completed in 44ms (DB: 14) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:58:58) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.3ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.8ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (17.0ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.0ms)
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.1ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 71ms (View: 26, DB: 15) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 18:59:31) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_read"=>"lus"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Load (0.4ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (6))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (6)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (7))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (7)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (8))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (8)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (9))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (9)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (10))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (10)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (11))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (11)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (12))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (12)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (13))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.9ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (13)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (14))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (14)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (15))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.7ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (15)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (16))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (16)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (17))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (17)) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (18))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.9ms)[0m   [0mUPDATE `mail` SET mail.read = true WHERE (conversation_id IN (18)) AND (`mail`.member_id = 5) [0m
+Redirected to http://localhost:3000/members/5/messages
+Completed in 113ms (DB: 14) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 18:59:32) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.4ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.6ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.3ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (16.7ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.1ms)
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (2.9ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 71ms (View: 26, DB: 16) | 200 OK [http://localhost/members/5/messages]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#choose_action (for 127.0.0.1 at 2010-03-06 19:00:03) [POST]
+  Parameters: {"checked"=>{"conv_ids"=>["13", "15", "18"]}, "response"=>{"message"=>"", "conversation_id"=>"18"}, "member_id"=>"5", "authenticity_token"=>"t0XQvnzCoIR9+WiJSx/UGHbMNq/0PtYwzyzNU0/aK7U=", "mark_unread"=>"non lus"}
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM `conversations` [0m
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mConversation Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `conversations`[0m
+  [4;36;1mMail Load (0.4ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (6))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.6ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (6))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (7))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.3ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (7))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.4ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (8))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (8))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (9))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (9))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (10))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (10))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (11))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (11))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (12))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (12))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (13))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (1.1ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (13))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (14))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (14))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (15))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.8ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (15))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (16))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (16))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (17))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.2ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (17))) AND (`mail`.member_id = 5) [0m
+  [4;36;1mMail Load (0.3ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.member_id = 5 AND (conversation_id IN (18))) ORDER BY created_at ASC, created_at DESC[0m
+  [4;35;1mMail Update (0.8ms)[0m   [0mUPDATE `mail` SET mail.read = false WHERE ((mail.mailbox != 'sentbox') AND (conversation_id IN (18))) AND (`mail`.member_id = 5) [0m
+Redirected to http://localhost:3000/members/5/messages
+Completed in 44ms (DB: 14) | 302 Found [http://localhost/members/5/messages/choose_action]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-03-06 19:00:03) [GET]
+  Parameters: {"member_id"=>"5"}
+  [4;35;1mConversation Load (0.3ms)[0m   [0mSELECT * FROM `conversations` [0m
+  [4;36;1mMember Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.6ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mConversation Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `conversations`[0m
+  [4;35;1mMail Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `mail`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (6))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (7))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (8))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (9))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (10))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (11))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (12))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (13))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (14))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (15))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (16))) ORDER BY created_at ASC [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (17))) ORDER BY created_at ASC [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `mail` WHERE (((mail.member_id = 5) AND (mail.mailbox = 'inbox' AND mail.trashed = 0)) AND (conversation_id IN (18))) ORDER BY created_at ASC [0m
+Rendering template within layouts/application
+Rendering messages/index
+Rendered messages/_new (0.7ms)
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMessage Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `messages`[0m
+  [4;35;1mMail Load (0.7ms)[0m   [0mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 20) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMessage Load (0.5ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.7ms)
+Rendered messages/_conversation (86.9ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 22) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 1) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 15) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (4.3ms)
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) ORDER BY created_at DESC LIMIT 1[0m
+  [4;36;1mMail Load (0.2ms)[0m   [0;1mSELECT * FROM `mail` WHERE (`mail`.`member_id` = 5 AND `mail`.`message_id` = 24) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM `messages` WHERE (`messages`.conversation_id = 18) [0m
+Rendered messages/_response (0.6ms)
+Rendered messages/_conversation (3.1ms)
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 140ms (View: 95, DB: 16) | 200 OK [http://localhost/members/5/messages]

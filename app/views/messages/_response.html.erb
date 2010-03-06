@@ -1,4 +1,6 @@
-<%= label_tag 'Reponse' %>
-<%= text_area_tag 'Reponse'%>
 
-<%= hidden_field_tag 'conv_id', conv.id %>
+  <%= label_tag 'Reponse', :response %>
+  <%= text_area_tag 'response[message]'%>
+
+  <%= hidden_field_tag 'response[conversation_id]', conv.id %>
+
