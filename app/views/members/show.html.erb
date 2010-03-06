@@ -1,15 +1,26 @@
 <h1> Page de profil</h1>
 
+
 <div class="grey line">
-  <%= label_tag 'Email' %>
+  <%= label_tag 'Email : ' %>
   <%= @member.email%>
 </div>
+
 <div class="line">
-  <%= label_tag 'Nom de famille' %>
+  <%= label_tag 'Nom de famille : ' %>
   <%= @member.last_name %>
+
+  <p>
+  <% for promotion in @member.promotions %>
+   <%=h "Diplome : "+promotion.degree %>
+   <%=h "Promotion : "+promotion.year %><br />  
+  <% end %>
+  </p>
+  
 </div>
 
 <div class="friend">
+  <h1>Amis</h1>
   <ul>
   <% for friend in @friends %>
     <li>

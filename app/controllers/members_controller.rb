@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_filter :find_member, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :find_member, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
   before_filter :login_required, :only => [:index, :show, :edit, :update, :add, :destroy]
   before_filter :authorized, :only => [:add, :destroy]
 
@@ -12,7 +12,6 @@ class MembersController < ApplicationController
   end 
   
   def show
-    @member = Member.find(params[:member_id])
     @friends = @member.friends
   end
   

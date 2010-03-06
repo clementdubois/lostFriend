@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100303225100) do
+ActiveRecord::Schema.define(:version => 20100306213730) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20100303225100) do
     t.datetime "updated_at"
   end
 
-  create_table "line_professional_curriculum", :force => true do |t|
+  create_table "line_curriculums", :id => false, :force => true do |t|
     t.integer  "member_id"
-    t.integer  "firm_id"
+    t.integer  "place_id"
     t.date     "beginning_year"
     t.date     "ending_year"
     t.datetime "created_at"
@@ -96,19 +96,9 @@ ActiveRecord::Schema.define(:version => 20100303225100) do
     t.integer "recipient_id", :null => false
   end
 
-  create_table "promotion_curriculum", :force => true do |t|
-    t.integer  "member_id"
-    t.integer  "school_id"
-    t.date     "beginning_year"
-    t.date     "ending_year"
-    t.string   "degree_obtain"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "promotions", :force => true do |t|
     t.string   "degree"
-    t.date     "year"
+    t.string   "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

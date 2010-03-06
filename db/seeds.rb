@@ -5,3 +5,24 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+
+# Generate seeds for the promotion
+
+years = []
+ i=1970
+ 
+ 
+ while(i <= 2010) do
+   years << i
+   i = i+1
+ end
+
+['DUT Informatique', 'License logiciel libre'].each do |degree|
+  years.each do |year|
+    Promotion.create(:year => year, :degree => degree)
+  end
+  
+end
+
+

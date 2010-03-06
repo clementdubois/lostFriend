@@ -8,6 +8,13 @@ class Member < ActiveRecord::Base
   acts_as_network :friends, :through => :invites, :conditions => ["is_accepted = ?", true] 
   acts_as_messageable
   
+  has_many :invites
+  has_many :line_curriculum
+  has_many :promotions, :through => :line_curriculum, :source => :member
+  has_many :firms, :through => :line_curriculum, :source => :member
+  has_many :schools, :through => :line_curriculum, :source => :member
+  
+  
   
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

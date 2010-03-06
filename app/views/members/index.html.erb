@@ -13,7 +13,7 @@
   
   <% for member in @members %>
     <li>
-        <%=h member.first_name+" "+member.last_name %>
+        <%= link_to h(member.first_name+" "+member.last_name), member_path(member.id) %>
         
         <% if admin?(current_member) %>
           <%= link_to "Supprimer ce membre", member, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
