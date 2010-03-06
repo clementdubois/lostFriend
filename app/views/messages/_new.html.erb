@@ -1,9 +1,14 @@
-<p><%= label_tag 'Destinataires' %>
-<%= text_field_tag 'Destinataires'%>
-*séparer les login des destinatais par une virgule et aucun espace</p>
+<% form_tag member_messages_path(current_member) do  %>
+  <p><%= label_tag 'Destinataires' %>
+  <%= text_field_tag 'Destinataires'%>
+  *séparer les login des destinatais par une virgule et aucun espace</p>
 
-<p><%= label_tag 'Sujet' %>
-<%= text_field_tag 'Sujet' %></p>
+  <p><%= label_tag 'Sujet' %>
+  <%= text_field_tag 'Sujet' %></p>
 
-<p><%= label_tag 'Message' %>
-<%= text_area_tag 'Message' %></p>
+  <p><%= label_tag 'Message' %>
+  <%= text_area_tag 'Message' %></p>
+  
+  <%= submit_tag "Envoyer"%>
+
+<% end %>

@@ -10,6 +10,13 @@
 </div>
 
 <div class="friend">
+  <ul>
+  <% for friend in @friends %>
+    <li>
+      <%=h friend.first_name+" "+friend.last_name %>
+    </li>  
+  <% end %>
+  <li>
   
 </div>
 

@@ -14,7 +14,7 @@
 <% end %>
 
 <!-- Reply to the conversation (will be show just if we show the entire conversation) -->
-<% form_tag reply_member_messages_path(current_member) %>
+<% form_tag reply_member_messages_path(current_member) do %>
   <%= render :partial => "response", :locals => {:conv => conv }%>
   
   <%= submit_tag "Repondre" %>

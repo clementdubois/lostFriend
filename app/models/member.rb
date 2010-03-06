@@ -8,6 +8,7 @@ class Member < ActiveRecord::Base
   acts_as_network :friends, :through => :invites, :conditions => ["is_accepted = ?", true] 
   acts_as_messageable
   
+  
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -39,6 +40,11 @@ class Member < ActiveRecord::Base
   # We really need a Dispatch Chain here or something.
   # This will also let us return a human error message.
   #
+  
+  def admin?
+    login == "admin"
+  end
+  
   def self.authenticate(login, password)
     return nil if login.blank? || password.blank?
     u = find_by_login(login.downcase) # need to get the salt

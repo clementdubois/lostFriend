@@ -1,16 +1,36 @@
 <h1>Liste des étudiants</h1>
 
+<div class="add_member">
+  <% if admin?(current_member) %>
+    <%= link_to "Ajouter un membre" %>
+    <div class="add_member_form">
+      <%= render :partial => "members/admin_add"%>
+    <div>
+  <% end %>
+</div>
+
 <ul>
   
   <% for member in @members %>
     <li>
-      
         <%=h member.first_name+" "+member.last_name %>
+        
+        <% if admin?(current_member) %>
+          <%= link_to "Supprimer ce membre", member, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
+        <% end %>
         
         <%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
          :method => :post if can_invite?(current_member, member) %>
-      
     </li>
+  <% end %>
+  
+  <% if admin?(current_member) %>
+   <% for member_pending in @members_pending %>
+      <li>
+        <%= member_pending.first_name+" "+member_pending.last_name %>
+        <%= link_to "Supprimer ce membre", member_pending, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
+      </li>
+   <% end %>
   <% end %>
   
 </ul>

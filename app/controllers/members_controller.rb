@@ -1,13 +1,19 @@
 class MembersController < ApplicationController
   before_filter :find_member, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :login_required, :only => [:index, :show, :edit, :update]
+  before_filter :login_required, :only => [:index, :show, :edit, :update, :add, :destroy]
+  before_filter :authorized, :only => [:add, :destroy]
 
+  helper_method :admin?
+  
   def index
-    @members = Member.all
+    @member = Member.new
+    @members = Member.all(:conditions => {:state => 'active'})
+    @members_pending = Member.all(:conditions => {:state => 'pending'})
   end 
   
   def show
-    @member = current_member
+    @member = Member.find(params[:member_id])
+    @friends = @member.friends
   end
   
   # render new.rhtml
@@ -16,7 +22,7 @@ class MembersController < ApplicationController
   end
  
   def create    
-    #Find member in the database that have the first and last name indicated in the subscription field
+    #Find member in the database that have the first and the activation_code indicated in the subscription field
     @member = Member.first(:conditions => {:first_name => params[:member][:first_name], :activation_code => params[:member][:activation_code]})
     find = true unless @member.nil?
     find = false if @member.nil?
@@ -47,20 +53,6 @@ class MembersController < ApplicationController
     
     end
     
-    
-    # @member = Member.new(params[:member])
-    # success = @member && @member.save
-    # if success && @member.errors.empty?
-    #         # Protects against session fixation attacks, causes request forgery
-    #   # protection if visitor resubmits an earlier form using back
-    #   # button. Uncomment if you understand the tradeoffs.
-    #   # reset session
-    #   self.current_member = @member # !! now logged in
-    #   flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
-    # else
-    #   flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
-    #   render :action => 'new'
-    # end
   end
   
   def edit
@@ -85,6 +77,21 @@ class MembersController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    @member.destroy
+    flash[:notice] = "Le membre à bien été supprimé"
+    redirect_to members_path
+  end
+  
+  def add
+    member = Member.create(params[:member])
+    member.save(false)
+    
+    flash[:notice] = "Le membre à bien été enregistré"
+    
+    redirect_to members_path
+  end
 
   def suspend
     @member.suspend! 
@@ -96,11 +103,6 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
 
-  def destroy
-    @member.delete!
-    redirect_to members_path
-  end
-
   def purge
     @member.destroy
     redirect_to members_path
@@ -109,8 +111,21 @@ class MembersController < ApplicationController
   # There's no page here to update or destroy a member.  If you add those, be
   # smart -- make sure you check that the visitor is authorized to do so, that they
   # supply their old password along with a new one to update it, etc.
+  def admin?(member)
+    member.login == "admin"
+  end
 
 protected
+  def authorized
+    unless admin?(current_member)
+      flash[:error] = "Vous n'avez pas la permission"
+      redirect_to members_path
+      false
+    end
+    
+  end
+
+
   def find_member
     @member = Member.find(params[:id])
   end

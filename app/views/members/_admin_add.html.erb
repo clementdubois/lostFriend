@@ -1,0 +1,12 @@
+<% form_for :member, :url => add_members_path() do |f| %>
+  <p><%= f.label "Prénom", :first_name %>
+  <%= f.text_field :first_name %></p>
+    
+  <p><%= f.label "Nom", :last_name %>
+  <%= f.text_field :last_name %></p>
+  
+  <p><%= f.label "Code d'activation", :activation_code %>
+  <%= f.text_field :activation_code %></p>
+    
+  <p><%= submit_tag "Enregistrer" %></p>
+<% end %>
