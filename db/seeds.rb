@@ -12,7 +12,6 @@
 years = []
  i=1970
  
- 
  while(i <= 2010) do
    years << i
    i = i+1
@@ -22,7 +21,24 @@ years = []
   years.each do |year|
     Promotion.create(:year => year.to_s, :degree => degree)
   end
-  
 end
+
+# Generate members for testing
+admin = Member.find_or_create_by_login(:login => "admin", :state => "active", :first_name => "admin",
+              :last_name => "act", :civil_state => "m", :email => "admin@truc.com", 
+              :activation_code => "azerty", :password => "azerty", :password_confirmation => "azerty")
+
+
+activated = Member.find_or_create_by_login(:login => "activate", :state => "active", :first_name => "activate",
+              :last_name => "act", :civil_state => "m", :email => "active@truc.com", 
+              :activation_code => "azerty", :password => "azerty", :password_confirmation => "azerty")
+
+pending = Member.find_or_create_by_first_name(:state => "pending", :first_name => "pending",
+              :last_name => "pend", :activation_code => "azerty")
+              
+admin.save
+activated.save
+pending.save(false)
+
 
 

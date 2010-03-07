@@ -24379,3 +24379,348 @@ Rendered members/_admin_add (29.3ms)
 Rendered layouts/_header (0.1ms)
 Rendered layouts/_footer (0.1ms)
 Completed in 176ms (View: 146, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 14:26:29) [GET]
+  [4;35;1mMember Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mPromotion Load (0.6ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mPromotion Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+Rendered members/_admin_add (30.3ms)
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.3ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 112ms (View: 80, DB: 9) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 14:26:40) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["247"], "degree1"=>["247"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"truc", "last_name"=>"much"}, "promotion2"=>{"year2"=>["247"], "degree2"=>["247"]}}
+  [4;36;1mMember Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mMember Load (0.1ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Create (0.2ms)[0m   [0mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 13:26:40', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'truc', '', 'much', NULL, 'pending', NULL, '2010-03-07 13:26:40')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPromotion Load (0.4ms)[0m   [0mSELECT * FROM `promotions` WHERE (`promotions`.`year` IN ('247') AND `promotions`.`degree` IN ('247')) [0m
+  [4;36;1mLineCurriculum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLineCurriculum Create (0.2ms)[0m   [0;1mINSERT INTO `line_curriculums` (`place_type`, `place_id`, `updated_at`, `member_id`, `beginning_year`, `ending_year`, `created_at`) VALUES('Promotion', 1, '2010-03-07 13:26:40', 12, NULL, NULL, '2010-03-07 13:26:40')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPromotion Load (0.4ms)[0m   [0;1mSELECT * FROM `promotions` WHERE (`promotions`.`year` IN ('247') AND `promotions`.`degree` IN ('247')) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLineCurriculum Create (0.2ms)[0m   [0;1mINSERT INTO `line_curriculums` (`place_type`, `place_id`, `updated_at`, `member_id`, `beginning_year`, `ending_year`, `created_at`) VALUES('Promotion', 1, '2010-03-07 13:26:40', 12, NULL, NULL, '2010-03-07 13:26:40')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members
+Completed in 46ms (DB: 9) | 302 Found [http://localhost/members/add]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 14:26:40) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mPromotion Load (0.6ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mPromotion Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+Rendered members/_admin_add (28.7ms)
+  [4;35;1mMember Load (0.9ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 104ms (View: 73, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPromotion Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.3ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1970', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1971', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1972', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.3ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1973', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1974', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1975', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1976', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1977', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1978', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1979', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1980', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1981', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1982', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1983', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1984', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1985', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1986', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1987', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1988', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1989', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (19.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.3ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1990', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1991', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1992', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1993', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1994', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1995', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1996', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.3ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1997', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1998', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '1999', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2000', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2001', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2002', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2003', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2004', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2005', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2006', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2007', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2008', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2009', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:27:16', '2010', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1970', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1971', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1972', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1973', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1974', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1975', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1976', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1977', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1978', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1979', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1980', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1981', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.4ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1982', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1983', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1984', '2010-03-07 17:27:16')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:16', '1985', '2010-03-07 17:27:16')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1986', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1987', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.3ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1988', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1989', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1990', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1991', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1992', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1993', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1994', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1995', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1996', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1997', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1998', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '1999', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2000', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2001', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.3ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2002', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2003', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2004', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2005', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2006', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2007', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2008', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2009', '2010-03-07 17:27:17')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.4ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:27:17', '2010', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'activate') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: state
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'activate') LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'active@truc.com') LIMIT 1[0m
+  [4;36;1mMember Create (0.2ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES('0bc4376784a4f2ea1efe42441938e8012482cdf4', '2010-03-07 17:27:17', NULL, '16b73211eec28945ccd484be5df6f91bbe3d01a0', NULL, 'azerty', NULL, NULL, NULL, 'activate', 'activate', 'act', 'm', 'pending', 'active@truc.com', '2010-03-07 17:27:17')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`first_name` = 'activate') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'admin' AND `members`.id <> 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'admin@admin.com' AND `members`.id <> 5) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'activate' AND `members`.id <> 13) LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'active@truc.com' AND `members`.id <> 13) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
