@@ -20,7 +20,7 @@ years = []
 
 ['DUT Informatique', 'License logiciel libre'].each do |degree|
   years.each do |year|
-    Promotion.create(:year => year, :degree => degree)
+    Promotion.create(:year => year.to_s, :degree => degree)
   end
   
 end

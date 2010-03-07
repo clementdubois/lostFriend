@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20100306213730) do
     t.date     "ending_year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "place_type"
   end
 
   create_table "mail", :force => true do |t|
@@ -78,8 +79,6 @@ ActiveRecord::Schema.define(:version => 20100306213730) do
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
   end
-
-  add_index "members", ["login"], :name => "index_members_on_login", :unique => true
 
   create_table "messages", :force => true do |t|
     t.text     "body"

@@ -11,4 +11,11 @@ module ApplicationHelper
     end
   end
   
+  def options_from_hash_for_select(collection, value_method, text_method, selected = nil)              
+    options = collection.map do |element|
+      [eval("element['#{text_method}']"), eval("element['#{value_method}']")]                          
+    end
+    options_for_select(options, selected)
+  end
+  
 end

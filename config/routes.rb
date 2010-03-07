@@ -1,7 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home', :action => 'index'
+  
   map.resources :members, :collection => {:add => :post} do |member|
     member.resources :messages, :collection => {:choose_action => :post}
+    member.resources :promotions, :has_many => :line_curriculums
+    member.resources :firms, :has_many => :line_curriculums
+    member.resources :schools, :has_many => :line_curriculums
   end
   map.resources :invites
 
