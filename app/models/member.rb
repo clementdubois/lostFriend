@@ -9,14 +9,14 @@ class Member < ActiveRecord::Base
   acts_as_messageable
   
   has_many :invites
-  has_many :line_curriculum
-  has_many :promotions, :through => :line_curriculum, :source => :member
-  has_many :firms, :through => :line_curriculum, :source => :member
-  has_many :schools, :through => :line_curriculum, :source => :member
+  # has_many :line_curriculum
+  #   has_many :promotions, :through => :line_curriculum
+  #   has_many :firms, :through => :line_curriculum
+  #   has_many :schools, :through => :line_curriculum
   
-  accepts_nested_attributes_for :promotions
-  accepts_nested_attributes_for :firms
-  accepts_nested_attributes_for :schools
+  #accepts_nested_attributes_for :promotions
+  #accepts_nested_attributes_for :firms
+  #accepts_nested_attributes_for :schools
   
   
   
@@ -24,8 +24,6 @@ class Member < ActiveRecord::Base
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
   validates_format_of       :login,    :with => Authentication.login_regex, :message => Authentication.bad_login_message
-
-  validates_presence_of     :civil_state
 
   validates_presence_of     :first_name
   validates_format_of       :first_name,     :with => Authentication.name_regex,  :message => Authentication.bad_login_message

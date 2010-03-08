@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     @members = Member.all(:conditions => {:state => 'active'})
     @members_pending = Member.all(:conditions => {:state => 'pending'})
     
-    2.times {@member.line_curriculum.build}
+    #2.times {@member.line_curriculum.build}
   end 
   
   def show
@@ -32,8 +32,12 @@ class MembersController < ApplicationController
       if(find && @member.state != "active") #if a member with the first name and the activation_code is find, it means that we can activate him
         
         #we can update the informations 
+        if params[:member][:login].empty?
+          params[:member][:login] = params[:member][:activation_code]
+        end
         if @member.update_attributes(params[:member])
           @member.update_attribute("state", "active")
+          
           self.current_member = @member # !! now logged in
           flash[:notice] = "Vos informations ont bien été enregistrées"
           format.html { redirect_to(root_path()) }
@@ -89,17 +93,16 @@ class MembersController < ApplicationController
     member = Member.create(params[:member])
     member.save(false)
     
-    if params[:promotion1]
-      line = member.line_curriculum.create(:place_id => Promotion.all(:conditions => {:year => params[:promotion1][:year1], :degree => params[:promotion1][:degree1]}),
-                                    :member_id => member.id, :place_type => "Promotion")
-      line.save()
-      
-    end
-    if params[:promotion2]
-      line = member.line_curriculum.create(:place_id => Promotion.all(:conditions => {:year => params[:promotion2][:year2], :degree => params[:promotion2][:degree2]}),
-                                    :member_id => member.id, :place_type => "Promotion")
-      line.save()
-    end
+    # if params[:promotion1]
+    #       promo = member.promotions.build(:year => params[:promotion1][:year1], :degree => params[:promotion1][:degree1])
+    #       logger.debug promo.to_yaml
+    #       promo.save()
+    #     end
+    #     if params[:promotion2]
+    #       promo = member.promotions.build(:year => params[:promotion2][:year2], :degree => params[:promotion2][:degree2])
+    #       logger.debug promo.to_yaml
+    #       promo.save()
+    #     end
     
     
     flash[:notice] = "Le membre à bien été enregistré"

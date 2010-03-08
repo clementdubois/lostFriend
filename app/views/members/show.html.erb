@@ -1,20 +1,45 @@
 <h1> Page de profil</h1>
+<p>
+  <%= @member.civil_state.to_s+"."+@member.first_name.to_s+" "+ @member.last_name.to_s%>
+</p>
 
+<p><%= link_to "Faire une demande d'ami", invites_path(:member_target => @member),
+ :method => :post if can_invite?(current_member, @member) %></p>
 
-<div class="grey line">
+<% if current_member.friends.include?(@member) || @member == current_member%>
+<p>Zone privée</p>
+
+<p>
   <%= label_tag 'Email : ' %>
   <%= @member.email%>
-</div>
+</p>
+<p>
+  <% if @member.region %>
+    <%= label_tag 'Region : ' %>
+    <%= @member.region %>
+  <% end %>
+</p>
+<p>
+  <% if @member.town %>
+    <%= label_tag 'ville : ' %>
+    <%= @member.town %>
+  <% end %>
+</p>
 
-<div class="line">
-  <%= label_tag 'Nom de famille : ' %>
-  <%= @member.last_name %>
+<p>
+  <% if @member.zipcode %>
+    <%= label_tag 'Code postal : ' %>
+    <%= @member.zipcode %>
+  <% end %>
+</p>
+<% end %>
+
 
   <p>
-  <% for promotion in @member.promotions %>
-   <%=h "Diplome : "+promotion.degree %>
-   <%=h "Promotion : "+promotion.year %><br />  
-  <% end %>
+  <%# for promotion in @member.promotions %>
+   <%#=h "Diplome : "+promotion.degree %>
+   <%#=h "Promotion : "+promotion.year %><br />  
+  <%# end %>
   </p>
   
 </div>
@@ -27,7 +52,7 @@
       <%=h friend.first_name+" "+friend.last_name %>
     </li>  
   <% end %>
-  <li>
+  <ul>
   
 </div>
 

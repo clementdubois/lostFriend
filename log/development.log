@@ -24724,3 +24724,2023 @@ WARNING: Can't mass-assign these protected attributes: state
   [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
   [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-07 18:35:00) [GET]
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 33ms (View: 16, DB: 3) | 200 OK [http://localhost/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-07 18:35:33) [POST]
+  Parameters: {"commit"=>"S'inscrire", "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"region"=>"", "password_confirmation"=>"azerty", "zipcode"=>"", "activation_code"=>"azerty", "town"=>"", "first_name"=>"tuc", "password"=>"azerty", "login"=>"truc", "civil_state"=>"m", "last_name"=>"much", "email"=>"truc@hotmail.com"}}
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`first_name` = 'tuc' AND `members`.`activation_code` = 'azerty') LIMIT 1[0m
+Redirected to http://localhost:3000/signup
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-07 18:35:33) [GET]
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 28ms (View: 10, DB: 3) | 200 OK [http://localhost/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-07 18:36:28) [POST]
+  Parameters: {"commit"=>"S'inscrire", "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"region"=>"", "password_confirmation"=>"azerty", "zipcode"=>"", "activation_code"=>"azerty", "town"=>"", "first_name"=>"truc", "password"=>"azerty", "login"=>"truc", "civil_state"=>"m", "last_name"=>"much", "email"=>"truc@hotmail.com"}}
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`first_name` = 'truc' AND `members`.`activation_code` = 'azerty') LIMIT 1[0m
+  [4;35;1mMember Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'truc' AND `members`.id <> 8) LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'truc@hotmail.com' AND `members`.id <> 8) LIMIT 1[0m
+  [4;35;1mMember Update (0.4ms)[0m   [0mUPDATE `members` SET `login` = 'truc', `crypted_password` = 'a9b2f8526e33854e1538515385a5d9759e2f31c4', `town` = '', `civil_state` = 'm', `last_name` = 'much', `region` = '', `zipcode` = '', `email` = 'truc@hotmail.com', `updated_at` = '2010-03-07 17:36:28' WHERE `id` = 8[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Update (0.2ms)[0m   [0;1mUPDATE `members` SET `state` = 'active', `updated_at` = '2010-03-07 17:36:28' WHERE `id` = 8[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 31ms (DB: 6) | 302 Found [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-07 18:36:28) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-07 18:36:33) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-07 18:36:46) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "login"=>"truc", "password"=>"azerty"}
+  [4;35;1mMember Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'truc') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 87ms (DB: 3) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-07 18:36:46) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:36:50) [GET]
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 8) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 8) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 8) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 8) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 8) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 50ms (View: 20, DB: 7) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#edit (for 127.0.0.1 at 2010-03-07 18:36:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mMember Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 8) LIMIT 1[0m
+  [4;35;1mInvite Load (0.3ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id_target = 8) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id = 8) [0m
+Rendering template within layouts/application
+Rendering members/edit
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 8) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 8) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 38ms (View: 14, DB: 4) | 200 OK [http://localhost/members/3/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-07 18:37:01) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 3) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `line_curriculums` ON `members`.id = `line_curriculums`.member_id WHERE ((`line_curriculums`.member_id = 3)) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 3) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 3) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 107ms (View: 82, DB: 5) | 200 OK [http://localhost/members/3]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:37:18) [GET]
+  [4;35;1mMember Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 8) LIMIT 1[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 8) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 8) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 8) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 8) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 50ms (View: 19, DB: 8) | 200 OK [http://localhost/members/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-07 18:37:20) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 8) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `line_curriculums` ON `members`.id = `line_curriculums`.member_id WHERE ((`line_curriculums`.member_id = 8)) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 8) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 8) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 32ms (View: 9, DB: 5) | 200 OK [http://localhost/members/8]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-07 18:40:02) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.9ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 8) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `line_curriculums` ON `members`.id = `line_curriculums`.member_id WHERE ((`line_curriculums`.member_id = 8)) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 8) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 8) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 34ms (View: 9, DB: 5) | 200 OK [http://localhost/members/8]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPromotion Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.3ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1970', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1971', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1972', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1973', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1974', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1975', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1976', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1977', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1978', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1979', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1980', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1981', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1982', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1983', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1984', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1985', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1986', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1987', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1988', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1989', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1990', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1991', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1992', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1993', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.3ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1994', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1995', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1996', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1997', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1998', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '1999', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2000', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2001', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2002', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2003', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2004', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2005', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2006', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2007', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2008', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2009', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('DUT Informatique', '2010-03-07 17:41:23', '2010', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1970', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1971', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1972', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1973', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1974', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1975', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1976', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1977', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1978', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.3ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1979', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1980', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1981', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1982', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1983', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1984', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1985', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1986', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1987', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1988', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1989', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1990', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1991', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1992', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1993', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1994', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1995', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1996', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1997', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1998', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '1999', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2000', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2001', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.2ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2002', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.2ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2003', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2004', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2005', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2006', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.3ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2007', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2008', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPromotion Create (0.1ms)[0m   [0mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2009', '2010-03-07 17:41:23')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPromotion Create (0.1ms)[0m   [0;1mINSERT INTO `promotions` (`degree`, `updated_at`, `year`, `created_at`) VALUES('License logiciel libre', '2010-03-07 17:41:23', '2010', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'activate') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: state
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'activate') LIMIT 1[0m
+  [4;35;1mMember Load (0.1ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'active@truc.com') LIMIT 1[0m
+  [4;36;1mMember Create (0.2ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES('881617d2e4a8a7995ab7ba5cf26740a70ec37580', '2010-03-07 17:41:23', NULL, '918f11fb18773ef4a2691b22ad6a9db1efcd68fa', NULL, 'azerty', NULL, NULL, NULL, 'activate', 'activate', 'act', 'm', 'pending', 'active@truc.com', '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`first_name` = 'pending') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: state
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.1ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.1ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'admin' AND `members`.id <> 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'admin@admin.com' AND `members`.id <> 5) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'activate' AND `members`.id <> 14) LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'active@truc.com' AND `members`.id <> 14) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.2ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 17:41:23', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'pending', '', 'pend', NULL, 'pending', NULL, '2010-03-07 17:41:23')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-07 18:42:16) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-07 18:42:27) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "login"=>"admin", "password"=>"azerty"}
+  [4;36;1mMember Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 24ms (DB: 3) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-07 18:42:27) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:42:32) [GET]
+  [4;36;1mMember Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mPromotion Load (0.9ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mPromotion Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `promotions`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+Rendered members/_admin_add (43.9ms)
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 92ms (View: 61, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 18:42:57) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["248"], "degree1"=>["248"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"plus", "last_name"=>"plus"}, "promotion2"=>{"year2"=>["265"], "degree2"=>["300"]}}
+  [4;35;1mMember Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.2ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 17:42:57', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'plus', '', 'plus', NULL, 'pending', NULL, '2010-03-07 17:42:57')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPromotion Load (0.5ms)[0m   [0;1mSELECT * FROM `promotions` WHERE (`promotions`.`year` IN ('248') AND `promotions`.`degree` IN ('248')) [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLineCurriculum Create (0.2ms)[0m   [0mINSERT INTO `line_curriculums` (`place_type`, `place_id`, `updated_at`, `member_id`, `beginning_year`, `ending_year`, `created_at`) VALUES('Promotion', 1, '2010-03-07 17:42:57', 16, NULL, NULL, '2010-03-07 17:42:57')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPromotion Load (0.4ms)[0m   [0mSELECT * FROM `promotions` WHERE (`promotions`.`year` IN ('265') AND `promotions`.`degree` IN ('300')) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLineCurriculum Create (0.3ms)[0m   [0mINSERT INTO `line_curriculums` (`place_type`, `place_id`, `updated_at`, `member_id`, `beginning_year`, `ending_year`, `created_at`) VALUES('Promotion', 1, '2010-03-07 17:42:57', 16, NULL, NULL, '2010-03-07 17:42:57')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members
+Completed in 122ms (DB: 11) | 302 Found [http://localhost/members/add]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:42:57) [GET]
+  [4;36;1mMember Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mPromotion Load (0.9ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mPromotion Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `promotions`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+Rendered members/_admin_add (45.1ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 96ms (View: 64, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-07 18:43:08) [GET]
+  [4;35;1mMember Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 26ms (View: 10, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-07 18:43:50) [POST]
+  Parameters: {"commit"=>"S'inscrire", "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"region"=>"", "password_confirmation"=>"azerty", "zipcode"=>"", "activation_code"=>"azerty", "town"=>"", "first_name"=>"plus", "password"=>"azerty", "login"=>"plus", "civil_state"=>"m", "last_name"=>"plus", "email"=>"plus@plus.com"}}
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`first_name` = 'plus' AND `members`.`activation_code` = 'azerty') LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'plus' AND `members`.id <> 16) LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'plus@plus.com' AND `members`.id <> 16) LIMIT 1[0m
+  [4;36;1mMember Update (0.3ms)[0m   [0;1mUPDATE `members` SET `login` = 'plus', `crypted_password` = 'a9b2f8526e33854e1538515385a5d9759e2f31c4', `town` = '', `civil_state` = 'm', `region` = '', `zipcode` = '', `email` = 'plus@plus.com', `updated_at` = '2010-03-07 17:43:50' WHERE `id` = 16[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Update (0.2ms)[0m   [0mUPDATE `members` SET `state` = 'active', `updated_at` = '2010-03-07 17:43:50' WHERE `id` = 16[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 107ms (DB: 6) | 302 Found [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-07 18:43:50) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:43:55) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 16) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 16) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 16) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 16) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 16) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 42ms (View: 13, DB: 7) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-07 18:43:58) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 16) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 16) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `line_curriculums` ON `members`.id = `line_curriculums`.member_id WHERE ((`line_curriculums`.member_id = 16)) [0m
+
+ActionView::TemplateError (undefined method `degree' for #<Member:0x2396280>) on line #15 of app/views/members/show.html.erb:
+12: 
+13:   <p>
+14:   <% for promotion in @member.promotions %>
+15:    <%=h "Diplome : "+promotion.degree %>
+16:    <%=h "Promotion : "+promotion.year %><br />  
+17:   <% end %>
+18:   </p>
+
+    app/views/members/show.html.erb:15
+    app/views/members/show.html.erb:14
+
+Rendered rescues/_trace (104.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:50:43) [GET]
+  [4;36;1mMember Columns (95.6ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 16) LIMIT 1[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 16) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 16) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 16) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 16) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 142ms (View: 15, DB: 100) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:50:46) [GET]
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 16) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 16) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 16) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 16) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 16) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 41ms (View: 12, DB: 7) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-07 18:50:51) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-07 18:51:08) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "login"=>"admin", "password"=>"azerty"}
+  [4;35;1mMember Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 24ms (DB: 4) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-07 18:51:08) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 18:51:16) [GET]
+  [4;35;1mMember Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mPromotion Load (0.9ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mPromotion Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `promotions` [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `promotions` [0m
+Rendered members/_admin_add (44.1ms)
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 96ms (View: 65, DB: 9) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 18:51:47) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["283"], "degree1"=>["247"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"abat", "last_name"=>"capitalisme"}, "promotion2"=>{"year2"=>["284"], "degree2"=>["291"]}}
+  [4;36;1mMember Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Create (0.2ms)[0m   [0mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 17:51:47', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'abat', '', 'capitalisme', NULL, 'pending', NULL, '2010-03-07 17:51:47')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPromotion Load (0.5ms)[0m   [0mSELECT * FROM `promotions` WHERE (`promotions`.`year` IN ('283') AND `promotions`.`degree` IN ('247')) [0m
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/members_controller.rb:93:in `add'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 19:09:32) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["283"], "degree1"=>["247"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"abat", "last_name"=>"capitalisme"}, "promotion2"=>{"year2"=>["284"], "degree2"=>["291"]}}
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.7ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.3ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 18:09:32', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'abat', '', 'capitalisme', NULL, 'pending', NULL, '2010-03-07 18:09:32')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+
+NoMethodError (undefined method `promotion' for #<Member:0x24918c4>):
+  app/controllers/members_controller.rb:93:in `add'
+
+Rendered rescues/_trace (31.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 19:09:55) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["283"], "degree1"=>["247"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"abat", "last_name"=>"capitalisme"}, "promotion2"=>{"year2"=>["284"], "degree2"=>["291"]}}
+  [4;35;1mMember Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.3ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 18:09:55', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'abat', '', 'capitalisme', NULL, 'pending', NULL, '2010-03-07 18:09:55')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `year=' for #<Member:0x2662be4>):
+  app/controllers/members_controller.rb:93:in `add'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:10:54) [GET]
+  [4;35;1mMember Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+
+ActionView::TemplateError (undefined local variable or method `··' for #<ActionView::Base:0x247fb60>) on line #15 of app/views/members/_admin_add.html.erb:
+12:   <div class="add_promotion">
+13:     <p> 
+14:       <%= label_tag :degree, "Diplôme" %>
+15:       <%= select_tag "promotion1[degree1][]", ·· %>
+16:     </p>
+17:     <p> 
+18:       <%= label_tag :year, "Année d'obtention du diplôme"%>
+
+    app/views/members/_admin_add.html.erb:15
+    app/views/members/_admin_add.html.erb:1
+    app/views/members/index.html.erb:7
+
+Rendered rescues/_trace (46.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:11:52) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mPromotion Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+
+ActionView::TemplateError (undefined method `list_degree' for #<Class:0x2375814>) on line #15 of app/views/members/_admin_add.html.erb:
+12:   <div class="add_promotion">
+13:     <p> 
+14:       <%= label_tag :degree, "Diplôme" %>
+15:       <%= select_tag "promotion1[degree1][]",  options_for_select(Promotion.list_degree) %>
+16:     </p>
+17:     <p> 
+18:       <%= label_tag :year, "Année d'obtention du diplôme"%>
+
+    app/views/members/_admin_add.html.erb:15
+    app/views/members/_admin_add.html.erb:1
+    app/views/members/index.html.erb:7
+
+Rendered rescues/_trace (46.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:12:15) [GET]
+  [4;35;1mMember Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (9.2ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 68ms (View: 40, DB: 7) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:12:31) [GET]
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (11.0ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 149ms (View: 43, DB: 6) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:12:41) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (9.7ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 69ms (View: 40, DB: 7) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:12:55) [GET]
+  [4;35;1mMember Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (9.4ms)
+  [4;36;1mMember Load (62.6ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 210ms (View: 120, DB: 70) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 19:13:11) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["1974"], "degree1"=>["DUT Informatique"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"abat", "last_name"=>"capitalisme"}, "promotion2"=>{"year2"=>["1988"], "degree2"=>["Licence Logiciel libre"]}}
+  [4;35;1mMember Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.2ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 18:13:11', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'abat', '', 'capitalisme', NULL, 'pending', NULL, '2010-03-07 18:13:11')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `year=' for #<Member:0x249f30c>):
+  app/controllers/members_controller.rb:93:in `add'
+
+Rendered rescues/_trace (37.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:14:51) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (9.5ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 144ms (View: 117, DB: 6) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 19:15:01) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["1974"], "degree1"=>["DUT Informatique"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"abatu", "last_name"=>"capitalisme"}, "promotion2"=>{"year2"=>["1988"], "degree2"=>["Licence Logiciel libre"]}}
+  [4;35;1mMember Columns (15.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (7.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.3ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 18:15:01', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'abatu', '', 'capitalisme', NULL, 'pending', NULL, '2010-03-07 18:15:01')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+WARNING: Can't mass-assign these protected attributes: degree, year
+--- !ruby/object:Member 
+attributes: 
+  salt: 
+  updated_at: 
+  crypted_password: 
+  region: 
+  zipcode: 
+  member_id: 21
+  remember_token_expires_at: 
+  activation_code: 
+  remember_token: 
+  town: 
+  first_name: ""
+  civil_state: 
+  last_name: ""
+  login: ""
+  created_at: 
+  email: 
+  state: pending
+attributes_cache: {}
+
+changed_attributes: 
+  member_id: 
+new_record: true
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+WARNING: Can't mass-assign these protected attributes: degree, year
+--- !ruby/object:Member 
+attributes: 
+  salt: 
+  updated_at: 
+  crypted_password: 
+  region: 
+  zipcode: 
+  member_id: 21
+  remember_token_expires_at: 
+  activation_code: 
+  remember_token: 
+  town: 
+  first_name: ""
+  civil_state: 
+  last_name: ""
+  login: ""
+  created_at: 
+  email: 
+  state: pending
+attributes_cache: {}
+
+changed_attributes: 
+  member_id: 
+new_record: true
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Redirected to http://localhost:3000/members
+Completed in 97ms (DB: 27) | 302 Found [http://localhost/members/add]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:15:01) [GET]
+  [4;35;1mMember Columns (45.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.9ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (124.5ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (12.2ms)
+  [4;36;1mMember Load (277.8ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 534ms (View: 59, DB: 450) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-07 19:15:39) [POST]
+  Parameters: {"commit"=>"Enregistrer", "promotion1"=>{"year1"=>["1971"], "degree1"=>["DUT Informatique"]}, "authenticity_token"=>"PxraIYsKTZOf7DOvw6BZXcndurcKSCTXbeab8yIX6YA=", "member"=>{"activation_code"=>"azerty", "first_name"=>"abatre", "last_name"=>"a"}, "promotion2"=>{"year2"=>["1987"], "degree2"=>["DUT Informatique"]}}
+  [4;35;1mMember Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.1ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.2ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-07 18:15:39', NULL, NULL, NULL, 'azerty', NULL, NULL, NULL, 'abatre', '', 'a', NULL, 'pending', NULL, '2010-03-07 18:15:39')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+WARNING: Can't mass-assign these protected attributes: degree, year
+--- !ruby/object:Member 
+attributes: 
+  salt: 
+  updated_at: 
+  crypted_password: 
+  region: 
+  zipcode: 
+  member_id: 22
+  remember_token_expires_at: 
+  activation_code: 
+  remember_token: 
+  town: 
+  first_name: ""
+  civil_state: 
+  last_name: ""
+  login: ""
+  created_at: 
+  email: 
+  state: pending
+attributes_cache: {}
+
+changed_attributes: 
+  member_id: 
+new_record: true
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mMember Load (0.1ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+WARNING: Can't mass-assign these protected attributes: degree, year
+--- !ruby/object:Member 
+attributes: 
+  salt: 
+  updated_at: 
+  crypted_password: 
+  region: 
+  zipcode: 
+  member_id: 22
+  remember_token_expires_at: 
+  activation_code: 
+  remember_token: 
+  town: 
+  first_name: ""
+  civil_state: 
+  last_name: ""
+  login: ""
+  created_at: 
+  email: 
+  state: pending
+attributes_cache: {}
+
+changed_attributes: 
+  member_id: 
+new_record: true
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Redirected to http://localhost:3000/members
+Completed in 122ms (DB: 7) | 302 Found [http://localhost/members/add]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-07 19:15:39) [GET]
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (10.1ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 84ms (View: 51, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` ORDER BY members.id DESC LIMIT 1[0m
+  [4;36;1mMember Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `line_curriculums` ON `members`.id = `line_curriculums`.member_id WHERE ((`line_curriculums`.member_id = 22)) [0m
+WARNING: Can't mass-assign these protected attributes: degree, year
+WARNING: Can't mass-assign these protected attributes: degree, year
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mPromotion Load (0.4ms)[0m   [0mSELECT * FROM `promotions` LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mPromotion Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM `members` ORDER BY members.id DESC LIMIT 1[0m
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM `members` ORDER BY members.id DESC LIMIT 1[0m
+  [4;36;1mMember Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` ORDER BY members.id DESC LIMIT 1[0m
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (59.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-08 18:41:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.4ms)
+Rendered layouts/_footer (20.7ms)
+Completed in 193ms (View: 190, DB: 60) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-08 18:54:20) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 62ms (View: 60, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-08 18:54:25) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"3GuzZZ5lwkq4D6vnVtPhi/CpgrFsD3sojf7DqdECt6Q=", "login"=>"admin", "password"=>"azerty"}
+  [4;35;1mMember Columns (94.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (85.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 313ms (DB: 180) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-08 18:54:26) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-08 18:55:29) [GET]
+  [4;35;1mMember Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (472.9ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (4.6ms)
+  [4;36;1mMember Load (41.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.3ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 683ms (View: 136, DB: 520) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#add (for 127.0.0.1 at 2010-03-08 18:55:51) [POST]
+  Parameters: {"commit"=>"Enregistrer", "authenticity_token"=>"3GuzZZ5lwkq4D6vnVtPhi/CpgrFsD3sojf7DqdECt6Q=", "member"=>{"activation_code"=>"test_login", "first_name"=>"test_login", "last_name"=>"test_login"}}
+  [4;35;1mMember Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '') LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Create (0.4ms)[0m   [0;1mINSERT INTO `members` (`salt`, `updated_at`, `region`, `crypted_password`, `zipcode`, `activation_code`, `remember_token_expires_at`, `town`, `remember_token`, `first_name`, `login`, `last_name`, `civil_state`, `state`, `email`, `created_at`) VALUES(NULL, '2010-03-08 17:55:51', NULL, NULL, NULL, 'test_login', NULL, NULL, NULL, 'test_login', '', 'test_login', NULL, 'pending', NULL, '2010-03-08 17:55:51')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/members
+Completed in 28ms (DB: 5) | 302 Found [http://localhost/members/add]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-08 18:55:51) [GET]
+  [4;35;1mMember Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (2.8ms)
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 72ms (View: 46, DB: 6) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-03-08 18:56:24) [GET]
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-08 18:56:24) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-08 18:57:12) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-08 18:57:30) [GET]
+  [4;36;1mMember Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+ERROR: compiling _run_erb_app47views47members47new46html46erb RAISED compile error
+/Users/clement/Ruby/work/lostFriend/app/views/members/new.html.erb:34: syntax error, unexpected kENSURE, expecting kEND
+/Users/clement/Ruby/work/lostFriend/app/views/members/new.html.erb:36: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47members47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>S'inscrire sur LostFriend</h1>\n"
+ @member.password = @member.password_confirmation = nil ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+ form_for :member, :url => members_path do |f| 
+@output_buffer.concat(( error_messages_for :member ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'first_name', 'Prénom *' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.text_field :first_name ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'last_name', 'Nom *' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.text_field :last_name ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'activation_code', 'Code d\'activation *' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.text_field :activation_code ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'login', 'Pseudo **' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.text_field :login ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'email', 'Email ' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.text_field :email ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'password', 'Mot de passe *' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.password_field :password ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( label_tag 'password_confirmation', 'Confirmer le mot de passe *' ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat(( f.password_field :password_confirmation ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( submit_tag "S'inscrire" ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>Les champs suivis d'une \303\251toile * sont obligatoires afin de v\303\251rifier votre existance sur notre base de donn\303\251e d'\303\251tudiants et de pouvoir vous connecter'<p>\n"
+@output_buffer.concat "<p>** Si vous n'indiquez pas de pseudo, votre login sera votre code d'activation par d\303\251faut</p>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/clement/Ruby/work/lostFriend/app/views/members/new.html.erb:36:in `compile!'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/renderable.rb:61:in `compile'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/renderable.rb:28:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/template.rb:199:in `render_template'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/base.rb:260:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/base.rb:257:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:1326:in `default_render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/reloader.rb:34:in `run'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/railties/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/clement/Ruby/work/lostFriend/app/views/members/new.html.erb:34: syntax error, unexpected kENSURE, expecting kEND
+/Users/clement/Ruby/work/lostFriend/app/views/members/new.html.erb:36: syntax error, unexpected $end, expecting kEND) on line #34 of app/views/members/new.html.erb:
+31: <p>Les champs suivis d'une étoile * sont obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter'<p>
+32: <p>** Si vous n'indiquez pas de pseudo, votre login sera votre code d'activation par défaut</p>
+
+    app/views/members/new.html.erb:36:in `compile!'
+
+Rendered rescues/_trace (36.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-08 18:58:59) [GET]
+  [4;36;1mMember Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 33ms (View: 15, DB: 3) | 200 OK [http://localhost/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-08 19:00:26) [POST]
+  Parameters: {"commit"=>"S'inscrire", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "member"=>{"password_confirmation"=>"azerty", "activation_code"=>"test_login", "first_name"=>"test_login", "password"=>"azerty", "login"=>"", "last_name"=>"test_login", "email"=>"test@test.com"}}
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`activation_code` = 'test_login' AND `members`.`first_name` = 'test_login') LIMIT 1[0m
+  [4;35;1mMember Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '' AND `members`.id <> 23) LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'test@test.com' AND `members`.id <> 23) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 42ms (View: 18, DB: 4) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-08 19:03:13) [POST]
+  Parameters: {"commit"=>"S'inscrire", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "member"=>{"password_confirmation"=>"azerty", "activation_code"=>"test_login", "first_name"=>"test_login", "password"=>"azerty", "login"=>"", "last_name"=>"test_login", "email"=>"test@test.com"}}
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`activation_code` = 'test_login' AND `members`.`first_name` = 'test_login') LIMIT 1[0m
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY '' AND `members`.id <> 23) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'test@test.com' AND `members`.id <> 23) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 52ms (View: 20, DB: 5) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#create (for 127.0.0.1 at 2010-03-08 19:04:13) [POST]
+  Parameters: {"commit"=>"S'inscrire", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "member"=>{"password_confirmation"=>"azerty", "activation_code"=>"test_login", "first_name"=>"test_login", "password"=>"azerty", "login"=>"", "last_name"=>"test_login", "email"=>"test@test.com"}}
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`activation_code` = 'test_login' AND `members`.`first_name` = 'test_login') LIMIT 1[0m
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.id FROM `members` WHERE (`members`.`login` = BINARY 'test_login' AND `members`.id <> 23) LIMIT 1[0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.id FROM `members` WHERE (`members`.`email` = BINARY 'test@test.com' AND `members`.id <> 23) LIMIT 1[0m
+  [4;35;1mMember Update (0.4ms)[0m   [0mUPDATE `members` SET `login` = 'test_login', `crypted_password` = 'a9b2f8526e33854e1538515385a5d9759e2f31c4', `email` = 'test@test.com', `updated_at` = '2010-03-08 18:04:13' WHERE `id` = 23[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Update (0.2ms)[0m   [0;1mUPDATE `members` SET `state` = 'active', `updated_at` = '2010-03-08 18:04:13' WHERE `id` = 23[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 110ms (DB: 6) | 302 Found [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-08 19:04:13) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-08 19:04:18) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-08 19:04:29) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "login"=>"test_login", "password"=>"test_login"}
+  [4;35;1mMember Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'test_login') LIMIT 1[0m
+Authentification échoué en tant que 'test_login' pour 127.0.0.1 à Mon Mar 08 18:04:29 UTC 2010
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 23ms (View: 3, DB: 3) | 200 OK [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-08 19:04:52) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "login"=>"test_login", "password"=>"azerty"}
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.8ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`login` = 'test_login') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 23ms (DB: 4) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-08 19:04:52) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-08 19:04:56) [GET]
+  [4;36;1mMember Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 110ms (View: 16, DB: 7) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-08 19:06:09) [GET]
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 26ms (View: 9, DB: 3) | 200 OK [http://localhost/signup]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-08 19:20:24) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-08 19:22:45) [POST]
+  Parameters: {"commit"=>"Se connecter", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "login"=>"test_login", "password"=>"azerty"}
+  [4;35;1mMember Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'test_login') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 19ms (DB: 3) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-08 19:22:45) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-08 19:22:49) [GET]
+  [4;35;1mMember Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+
+NoMethodError (undefined method `line_curriculum' for #<Member:0x23727a4>):
+  app/controllers/members_controller.rb:13:in `index'
+  app/controllers/members_controller.rb:13:in `times'
+  app/controllers/members_controller.rb:13:in `index'
+
+Rendered rescues/_trace (99.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-08 19:23:13) [GET]
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 33ms (View: 14, DB: 5) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:23:21) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+ERROR: compiling _run_erb_app47views47members47show46html46erb RAISED compile error
+/Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:3: syntax error, unexpected '<'
+@output_buffer.concat "  "; @output_buffer.concat(( @member.civil_state+"."+@member.first_name+" "+<%= @member.last_email).to_s); @output_buffer.concat "\n"
+                                                                                                    ^
+/Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:7: syntax error, unexpected kIF_MOD, expecting ')'
+ :method => :post if can_invite?(current_member, member) ).to_s); @output_buffer.concat "</p>\n"
+                    ^
+/Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:7: syntax error, unexpected ')', expecting kEND
+ :method => :post if can_invite?(current_member, member) ).to_s); @output_buffer.concat "</p>\n"
+                                                          ^
+Function body:           def _run_erb_app47views47members47show46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1> Page de profil</h1>\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( @member.civil_state+"."+@member.first_name+" "+<%= @member.last_email).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( link_to "Faire une demande d'ami", invites_path(:member_target => member),
+ :method => :post if can_invite?(current_member, member) ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+ if current_user.friends.include?(@member); @output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( label_tag 'Email : ' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( @member.email).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  ";  if @member.region ; @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( label_tag 'Region : ' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( @member.region ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  ";  if @member.town ; @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( label_tag 'ville : ' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( @member.town ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>\n"
+@output_buffer.concat "  ";  if @member.zipcode ; @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( label_tag 'Code postal : ' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    "; @output_buffer.concat(( @member.zipcode ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</p>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "  "; @output_buffer.concat "\n"
+@output_buffer.concat "   "; @output_buffer.concat "\n"
+@output_buffer.concat "   "; @output_buffer.concat "<br />  \n"
+@output_buffer.concat "  "; @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  \n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div class=\"friend\">\n"
+@output_buffer.concat "  <h1>Amis</h1>\n"
+@output_buffer.concat "  <ul>\n"
+@output_buffer.concat "  ";  for friend in @friends ; @output_buffer.concat "\n"
+@output_buffer.concat "    <li>\n"
+@output_buffer.concat "      "; @output_buffer.concat((h friend.first_name+" "+friend.last_name ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </li>  \n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "  <ul>\n"
+@output_buffer.concat "  \n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:61:in `compile!'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/renderable.rb:61:in `compile'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/renderable.rb:28:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/template.rb:199:in `render_template'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/base.rb:260:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_view/base.rb:257:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:1326:in `default_render'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/reloader.rb:34:in `run'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/clement/Ruby/work/lostFriend/vendor/rails/railties/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+./script/server:3
+
+ActionView::TemplateError (compile error
+/Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:3: syntax error, unexpected '<'
+@output_buffer.concat "  "; @output_buffer.concat(( @member.civil_state+"."+@member.first_name+" "+<%= @member.last_email).to_s); @output_buffer.concat "\n"
+                                                                                                    ^
+/Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:7: syntax error, unexpected kIF_MOD, expecting ')'
+ :method => :post if can_invite?(current_member, member) ).to_s); @output_buffer.concat "</p>\n"
+                    ^
+/Users/clement/Ruby/work/lostFriend/app/views/members/show.html.erb:7: syntax error, unexpected ')', expecting kEND
+ :method => :post if can_invite?(current_member, member) ).to_s); @output_buffer.concat "</p>\n"
+                                                          ^) on line #3 of app/views/members/show.html.erb:
+1: <h1> Page de profil</h1>
+2: <p>
+3:   <%= @member.civil_state+"."+@member.first_name+" "+<%= @member.last_email%>
+4: </p>
+5: 
+6: <p><%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
+
+    app/views/members/show.html.erb:61:in `compile!'
+
+Rendered rescues/_trace (101.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:23:37) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+) on line #3 of app/views/members/show.html.erb:
+1: <h1> Page de profil</h1>
+2: <p>
+3:   <%= @member.civil_state+"."+@member.first_name+" "+ @member.last_email%>
+4: </p>
+5: 
+6: <p><%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
+
+    app/views/members/show.html.erb:3
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:23:55) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.1ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+
+ActionView::TemplateError (undefined method `last_email' for #<Member:0x263d330>) on line #3 of app/views/members/show.html.erb:
+1: <h1> Page de profil</h1>
+2: <p>
+3:   <%= @member.civil_state.to_s+"."+@member.first_name.to_s+" "+ @member.last_email.to_s%>
+4: </p>
+5: 
+6: <p><%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
+
+    app/views/members/show.html.erb:3
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:24:08) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.1ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+
+ActionView::TemplateError (undefined local variable or method `member' for #<ActionView::Base:0x2427e9c>) on line #7 of app/views/members/show.html.erb:
+4: </p>
+5: 
+6: <p><%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
+7:  :method => :post if can_invite?(current_member, member) %></p>
+8: 
+9: <% if current_user.friends.include?(@member)%>
+10: <p>
+
+    app/views/members/show.html.erb:7
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:24:46) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+
+ActionView::TemplateError (undefined local variable or method `current_user' for #<ActionView::Base:0x2457e94>) on line #9 of app/views/members/show.html.erb:
+6: <p><%= link_to "Faire une demande d'ami", invites_path(:member_target => @member),
+7:  :method => :post if can_invite?(current_member, @member) %></p>
+8: 
+9: <% if current_user.friends.include?(@member)%>
+10: <p>
+11:   <%= label_tag 'Email : ' %>
+12:   <%= @member.email%>
+
+    app/views/members/show.html.erb:9
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:24:56) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 34ms (View: 12, DB: 5) | 200 OK [http://localhost/members/23]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:25:25) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 101ms (View: 79, DB: 6) | 200 OK [http://localhost/members/23]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-08 19:25:43) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mMember Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 36ms (View: 13, DB: 5) | 200 OK [http://localhost/members/23]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InvitesController#create (for 127.0.0.1 at 2010-03-08 19:25:57) [POST]
+  Parameters: {"member_target"=>"16", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM="}
+  [4;35;1mMember Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 16) [0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 16) [0m
+  [4;35;1mInvite Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `invites`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mInvite Create (0.3ms)[0m   [0mINSERT INTO `invites` (`message`, `accepted_at`, `updated_at`, `code`, `member_id`, `member_id_target`, `is_accepted`, `created_at`) VALUES('test_login test_login souhaite devenir votre ami', NULL, '2010-03-08 18:25:57', NULL, 23, 16, NULL, '2010-03-08 18:25:57')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members
+Completed in 46ms (DB: 7) | 302 Found [http://localhost/invites?member_target=16]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-08 19:25:57) [GET]
+  [4;36;1mMember Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 23) LIMIT 1[0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 23) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 23) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 23) [0m
+  [4;35;1mInvite Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `invites`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 16) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 23) [0m
+Rendered layouts/_header (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 40ms (View: 15, DB: 9) | 200 OK [http://localhost/members]
