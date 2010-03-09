@@ -1,0 +1,23 @@
+
+<h1> Connection </h1>
+<% form_tag session_path do -%>
+  <table>
+    <tr>
+      <td><%= label_tag 'login', 'Pseudo' %></td>
+      <td><%= text_field_tag 'login', @login %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'password', 'Mot de passe' %></td>
+      <td><%= password_field_tag 'password', nil %></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center"><%= image_submit_tag("/images/bg_button.gif") %></td>
+    </tr>
+    <!-- <tr>
+      <td colspan="2" style="text-align:center;"><a href="#">Mot de passe oublié</a></td>
+    </tr> -->
+    <tr>
+      <td colspan="2" style="text-align:center;"><%= link_to "S'inscrire", signup_path%></td>
+    </tr>
+  </table>
+<% end -%>

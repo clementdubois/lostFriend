@@ -29355,3 +29355,315 @@ Rendered members/_add_school (1.2ms)
 Rendered layouts/_header (0.1ms)
 Rendered layouts/_footer (0.1ms)
 Completed in 120ms (View: 86, DB: 7) | 200 OK [http://localhost/members/31/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-09 21:00:23) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered layouts/_big_menu (0.7ms)
+
+ActionView::TemplateError (Missing template session/_new.erb in view path app/views) on line #5 of app/views/layouts/_header.html.erb:
+2: <div id="bottom_header">
+3:   <div class="block_header2">
+4:     <!-- Login -->
+5:     <%= render "session/new"%>
+6:   </div>
+7:   <div id="bottom_header_middle"> </div>
+8:   <div class="block_header">
+
+    app/views/layouts/_header.html.erb:5
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (113.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-09 21:00:40) [GET]
+
+ActionView::MissingTemplate (Missing template sessions/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:01:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+
+ActionView::TemplateError (Missing template session/_new.erb in view path app/views) on line #5 of app/views/layouts/_header.html.erb:
+2: <div id="bottom_header">
+3:   <div class="block_header2">
+4:     <!-- Login -->
+5:     <%= render "session/new"%>
+6:   </div>
+7:   <div id="bottom_header_middle"> </div>
+8:   <div class="block_header">
+
+    app/views/layouts/_header.html.erb:5
+    app/views/layouts/application.html.erb:14
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-09 21:03:03) [GET]
+
+ActionView::MissingTemplate (Missing template sessions/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-03-09 21:03:28) [GET]
+
+ActionView::MissingTemplate (Missing template sessions/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:03:35) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (3.9ms)
+Rendered layouts/_header (9.3ms)
+Rendered layouts/_footer (0.6ms)
+Completed in 79ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:03:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_big_menu.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:03:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_top_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:03:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_block_header2.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:03:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_bottom_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:03:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_block_header.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:03:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_footer.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (2.2ms)
+Rendered layouts/_header (2.7ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_big_menu.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_top_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_block_header2.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_bottom_header.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_block_header.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-09 21:04:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_footer.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:05:25) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (2.1ms)
+Rendered layouts/_header (2.5ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:09:46) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (3.8ms)
+Rendered layouts/_header (8.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:10:28) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (3.2ms)
+Rendered layouts/_header (7.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:10:48) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (3.0ms)
+Rendered layouts/_header (59.4ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 64ms (View: 61, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:11:57) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (3.9ms)
+Rendered layouts/_header (8.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:12:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (3.2ms)
+Rendered layouts/_header (7.4ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-09 21:12:34) [POST]
+  Parameters: {"x"=>"40", "y"=>"27", "authenticity_token"=>"rc20ZHUlsbMKhE54UBOkGUv3NlE3hYa3GDfkKr2rAsM=", "login"=>"admin", "password"=>"azerty"}
+  [4;36;1mMember Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 25ms (DB: 3) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 21:12:34) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (1.9ms)
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-09 21:12:41) [GET]
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (11.6ms)
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_big_menu (0.1ms)
+Rendered sessions/_new (1.5ms)
+Rendered layouts/_header (1.9ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 132ms (View: 101, DB: 7) | 200 OK [http://localhost/members]
