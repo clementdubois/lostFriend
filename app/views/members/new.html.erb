@@ -5,30 +5,55 @@
 <%= error_messages_for :member %>
 
 
-<p><%= label_tag 'first_name', 'Prénom *' %><br/>
-<%= f.text_field :first_name %></p>
+<fieldset>
+  <legend>Informations personnelles</legend>
+  <br />
+  <p><%= label_tag 'first_name', 'Prénom *' %><br/>
+  <%= f.text_field :first_name, :size => 14 %></p>
 
-<p><%= label_tag 'last_name', 'Nom *' %><br/>
-<%= f.text_field :last_name %></p>
+  <p><%= label_tag 'last_name', 'Nom *' %><br/>
+  <%= f.text_field :last_name, :size => 14 %></p>
 
-<p><%= label_tag 'activation_code', 'Code d\'activation *' %><br/>
-<%= f.text_field :activation_code %></p>
+  <p><%= label_tag 'civil_state', 'Etat civil' %><br/>
+  <%= f.text_field :civil_state, :size => 14 %></p>
 
-<p><%= label_tag 'login', 'Pseudo **' %><br/>
-<%= f.text_field :login %></p>
+  <p><%= label_tag 'region', 'Region' %><br/>
+  <%= f.text_field :region, :size => 14 %></p>
 
-<p><%= label_tag 'email', 'Email ' %><br/>
-<%= f.text_field :email %></p>
+  <p><%= label_tag 'town', 'Ville' %><br/>
+  <%= f.text_field :town, :size => 14 %></p>
 
-<p><%= label_tag 'password', 'Mot de passe *' %><br/>
-<%= f.password_field :password %></p>
+  <p><%= label_tag 'zipcode', 'Code postal' %><br/>
+  <%= f.text_field :zipcode, :size => 14 %></p>
 
-<p><%= label_tag 'password_confirmation', 'Confirmer le mot de passe *' %><br/>
-<%= f.password_field :password_confirmation %></p>
+  <p><%= label_tag 'email', 'Email ' %><br/>
+  <%= f.text_field :email, :size => 14 %></p>
+  </br>
+</fieldset>
+<br />
+<fieldset>
+  <legend>Données d'authentification</legend>
+  
+  <br />
+  <p><%= label_tag 'activation_code', 'Code d\'activation *' %><br/>
+  <%= f.text_field :activation_code, :size => 14 %></p>
+
+  <p><%= label_tag 'login', 'Pseudo **' %><br/>
+  <%= f.text_field :login, :size => 14 %></p>
+
+  <p><%= label_tag 'password', 'Mot de passe *' %><br/>
+  <%= f.password_field :password, :size => 14 %></p>
+
+  <p><%= label_tag 'password_confirmation', 'Confirmer le mot de passe *' %><br/>
+  <%= f.password_field :password_confirmation, :size => 14 %></p>
+  
+</fieldset>
 
 <p><%= submit_tag "S'inscrire" %></p>
 
 <% end %>
 
-<p>Les champs suivis d'une étoile * sont obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter'<p>
+<p>Les champs suivis d'une étoile * sont obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter<p><br />
 <p>** Si vous n'indiquez pas de pseudo, votre login sera votre code d'activation par défaut</p>
+
+

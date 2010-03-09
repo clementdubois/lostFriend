@@ -30433,3 +30433,213 @@ Rendered layouts/_left_menu (0.1ms)
 Rendered layouts/_right_menu (0.1ms)
 Rendered layouts/_footer (0.1ms)
 Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:23:55) [GET]
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 28ms (View: 12, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:26:39) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.6ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 35ms (View: 18, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:26:54) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.8ms)
+Rendered layouts/_header (2.2ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 36ms (View: 18, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:29:21) [GET]
+  [4;35;1mMember Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.6ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 37ms (View: 20, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:29:39) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.8ms)
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 38ms (View: 20, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:03) [GET]
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.9ms)
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 37ms (View: 19, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:12) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.2ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 38ms (View: 20, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:18) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 36ms (View: 19, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:25) [GET]
+  [4;35;1mMember Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.2ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 98ms (View: 20, DB: 4) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:31) [GET]
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 37ms (View: 19, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:36) [GET]
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.9ms)
+Rendered layouts/_header (2.4ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 96ms (View: 79, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:30:42) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.8ms)
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 37ms (View: 20, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:31:10) [GET]
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.8ms)
+Rendered layouts/_header (2.2ms)
+Rendered layouts/_left_menu (0.2ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 97ms (View: 79, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:32:13) [GET]
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.1ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 39ms (View: 21, DB: 3) | 200 OK [http://localhost/signup]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#new (for 127.0.0.1 at 2010-03-09 22:33:40) [GET]
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+Rendering template within layouts/application
+Rendering members/new
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (1.7ms)
+Rendered layouts/_header (2.1ms)
+Rendered layouts/_left_menu (0.2ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 38ms (View: 20, DB: 3) | 200 OK [http://localhost/signup]
