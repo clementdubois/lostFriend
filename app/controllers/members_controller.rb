@@ -92,12 +92,19 @@ class MembersController < ApplicationController
   def add
     member = Member.create(params[:member])
     member.save(false)
-    
-    unless params[:promotion1].empty?
-      promo = member.promotions.create(:year => params[:promotion1][:year1], :degree => params[:promotion1][:degree1])
+    unless params[:promotion1][:year1].empty? && params[:promotion1][:degree1].empty?
+      promotion = Promotion.find_by_degree(params[:promotion1][:degree1])
+      promo = member.line_curriculums.create(:ending_year => params[:promotion1][:year1],
+                                             :beginning_year => params[:promotion1][:year1].to_i-2,
+                                             :place_id => promotion.id,
+                                             :place_type => "Promotion")
     end
-    unless params[:promotion2].empty?
-      promo = member.promotions.create(:year => params[:promotion2][:year2], :degree => params[:promotion2][:degree2])
+    unless params[:promotion2][:year2].empty? && params[:promotion2][:degree2].empty?
+      promotion = Promotion.find_by_degree(params[:promotion2][:degree2])
+      promo = member.line_curriculums.create(:ending_year => params[:promotion2][:year2],
+                                             :beginning_year => params[:promotion2][:year2].to_i-2,
+                                             :place_id => promotion.id,
+                                             :place_type => "Promotion")
     end
 
     

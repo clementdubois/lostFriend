@@ -9,18 +9,8 @@
 
 # Generate seeds for the promotion
 
-years = []
- i=1970
- 
- while(i <= 2010) do
-   years << i
-   i = i+1
- end
-
 ['DUT Informatique', 'License logiciel libre'].each do |degree|
-  years.each do |year|
-    Promotion.create(:year => year.to_s, :degree => degree)
-  end
+  Promotion.create(:degree => degree)
 end
 
 # Generate members for testing

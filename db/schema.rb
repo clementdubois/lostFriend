@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100306213730) do
+ActiveRecord::Schema.define(:version => 20100309143830) do
 
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20100306213730) do
   create_table "line_curriculums", :id => false, :force => true do |t|
     t.integer  "member_id"
     t.integer  "place_id"
-    t.date     "beginning_year"
-    t.date     "ending_year"
+    t.integer  "beginning_year"
+    t.integer  "ending_year"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "place_type"
@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(:version => 20100306213730) do
 
   create_table "promotions", :force => true do |t|
     t.string   "degree"
-    t.string   "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
