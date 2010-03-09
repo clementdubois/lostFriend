@@ -1,0 +1,11 @@
+<p><% f.fields_for :line_curriculums do |builder|%>
+  
+  <%= builder.label :beginning_year, "Années"%>
+  <%= builder.select :beginning_year, options_for_select(Promotion.list_year) %>
+  /
+  <%= builder.select :ending_year, options_for_select(Promotion.list_year) %>
+<% end %>
+
+<%= f.label :name, "Nom de l'école"%>
+<%= f.text_field :name %>
+</p>

@@ -17,6 +17,8 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :promotions
   accepts_nested_attributes_for :firms
   accepts_nested_attributes_for :schools
+  accepts_nested_attributes_for :line_curriculums
+  
   
   
   
@@ -41,7 +43,8 @@ class Member < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :first_name, :activation_code, :civil_state, :last_name, :town, :region, :zipcode, :password, :password_confirmation
+  attr_accessible :login, :email, :first_name, :activation_code, :civil_state, :last_name, :town, :region, :zipcode, :password, :password_confirmation,
+                  :line_curriculums_attributes, :schools_attributes, :firms_attributes
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #

@@ -35,12 +35,7 @@
 <% end %>
 
 
-  <p>
-  <% for promotion in @member.promotions %>
-   <%=h "Diplome : "+promotion.degree %>
-   <%=h "Promotion : "+promotion.year %><br />  
-  <% end %>
-  </p>
+  <%= render "show_promotion" %>
   
 </div>
 

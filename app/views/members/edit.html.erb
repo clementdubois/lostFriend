@@ -9,12 +9,35 @@
   </div>
   <div class="line">
     <%= f.label 'last_name', 'Nom de famille' %>
-    <%= f.text_field :last_name%>
+    <%= f.text_field :last_name %>
   </div>
+  <div class="grey line">
+     <%= f.label 'region', 'Region' %>
+     <%= f.text_field :region %>
+   </div>
+   <div class="grey line">
+      <%= f.label 'town', 'Ville' %>
+      <%= f.text_field :town %>
+    </div>
+    <div class="grey line">
+       <%= f.label 'zipcode', 'Code Postal' %>
+       <%= f.text_field :zipcode %>
+     </div>
   <div class="line">
       <%= submit_tag 'Editer' %>
   </div>
+
+  <h2>Votre parcours scolaire</h2>
+  <%= render "show_promotion" %>
+
+  <% f.fields_for :schools do |builder| %>
+    <%= render "add_school", :f => builder %>
+  <% end %>
+
 <% end %>
+
+
+<h2>Votre parcours professionnel</h2>
 
 
 <h2>Vos amis</h2>

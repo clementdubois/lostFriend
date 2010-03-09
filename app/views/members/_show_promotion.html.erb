@@ -1,0 +1,6 @@
+<p>
+<% for promotion in @member.promotions %>
+ <%=h "Diplome : "+promotion.degree %>
+ <%=h "Promotion : "+promotion.line_curriculums.find_by_member_id(@member.id).ending_year %><br />  
+<% end %>
+</p>

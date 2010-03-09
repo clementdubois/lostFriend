@@ -66,6 +66,10 @@ class MembersController < ApplicationController
     
     @invites_in = @member.invites_in.all(:conditions => {:is_accepted => nil})
     @invites_out = @member.invites_out.all(:conditions => {:is_accepted => nil})
+    
+    1.times do 
+      school = @member.schools.build
+    end
   end
   
   def update
@@ -73,8 +77,11 @@ class MembersController < ApplicationController
     
     respond_to do |format|
       if @member.update_attributes(params[:member])
+        # unless params[:school_line][:year1].empty?
+        #   line = LineCurriculum.all(:conditions => {:member_id => current_member.id, :place_type => "School", :place_id => @member.})
+        # end
         flash[:notice] = "Vos informations ont bien été enregistrées"
-        format.html { redirect_to(root_path()) }
+        format.html { redirect_to(edit_member_path(@member)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
