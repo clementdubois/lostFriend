@@ -6,7 +6,7 @@
 <p><%= link_to "Faire une demande d'ami", invites_path(:member_target => @member),
  :method => :post if can_invite?(current_member, @member) %></p>
 
-<% if current_member.friends.include?(@member) || @member == current_member%>
+<% if current_member.friends.include?(@member) || @member == current_member %>
 <p>Zone privée</p>
 
 <p>
@@ -36,10 +36,10 @@
 
 
   <p>
-  <%# for promotion in @member.promotions %>
-   <%#=h "Diplome : "+promotion.degree %>
-   <%#=h "Promotion : "+promotion.year %><br />  
-  <%# end %>
+  <% for promotion in @member.promotions %>
+   <%=h "Diplome : "+promotion.degree %>
+   <%=h "Promotion : "+promotion.year %><br />  
+  <% end %>
   </p>
   
 </div>

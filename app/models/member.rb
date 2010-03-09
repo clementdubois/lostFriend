@@ -9,14 +9,14 @@ class Member < ActiveRecord::Base
   acts_as_messageable
   
   has_many :invites
-  # has_many :line_curriculum
-  #   has_many :promotions, :through => :line_curriculum
-  #   has_many :firms, :through => :line_curriculum
-  #   has_many :schools, :through => :line_curriculum
+  has_many :line_curriculums, :dependent => :destroy
+  has_many :promotions, :through => :line_curriculums, :source => :place, :source_type => "Promotion"
+  has_many :firms, :through => :line_curriculums, :source => :place, :source_type => "Firm"
+  has_many :schools, :through => :line_curriculums, :source => :place, :source_type => "School"
   
-  #accepts_nested_attributes_for :promotions
-  #accepts_nested_attributes_for :firms
-  #accepts_nested_attributes_for :schools
+  accepts_nested_attributes_for :promotions
+  accepts_nested_attributes_for :firms
+  accepts_nested_attributes_for :schools
   
   
   

@@ -1,6 +1,6 @@
 class Promotion < ActiveRecord::Base
-  # has_many :line_curriculums, :as => :place
-  # has_many :members, :through => :line_curriculums
+  has_many :line_curriculums, :as => :place
+  has_many :members, :through => :line_curriculums
   
   def self.list_degree
     [

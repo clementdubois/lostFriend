@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     @members = Member.all(:conditions => {:state => 'active'})
     @members_pending = Member.all(:conditions => {:state => 'pending'})
     
-    #2.times {@member.line_curriculum.build}
+    2.times {@member.line_curriculums.build}
   end 
   
   def show
@@ -93,17 +93,13 @@ class MembersController < ApplicationController
     member = Member.create(params[:member])
     member.save(false)
     
-    # if params[:promotion1]
-    #       promo = member.promotions.build(:year => params[:promotion1][:year1], :degree => params[:promotion1][:degree1])
-    #       logger.debug promo.to_yaml
-    #       promo.save()
-    #     end
-    #     if params[:promotion2]
-    #       promo = member.promotions.build(:year => params[:promotion2][:year2], :degree => params[:promotion2][:degree2])
-    #       logger.debug promo.to_yaml
-    #       promo.save()
-    #     end
-    
+    unless params[:promotion1].empty?
+      promo = member.promotions.create(:year => params[:promotion1][:year1], :degree => params[:promotion1][:degree1])
+    end
+    unless params[:promotion2].empty?
+      promo = member.promotions.create(:year => params[:promotion2][:year2], :degree => params[:promotion2][:degree2])
+    end
+
     
     flash[:notice] = "Le membre à bien été enregistré"
     
