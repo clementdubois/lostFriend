@@ -1,0 +1,20 @@
+
+<div id="left_menu">
+  <div class="little_menu">
+    <div>
+      <h1> Menu </h1>
+      <% if logged_in? %>
+      
+        <ul>
+          <li> <%= link_to "Acceuil", root_path() %></li>
+          <li> <%= link_to "Mon profil", member_path(current_member) %></li>
+          <li> <%= link_to "Liste des anciens étudiants", members_path() %></li>
+          <li> <%= link_to "Messagerie", member_messages_path(current_member) %></li>
+        </ul>
+      
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+

@@ -5,27 +5,36 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <title>Lost Friend.</title>
      <%= stylesheet_link_tag "style" %>
-  </head>
+</head>
 
 <body>
-  <div id="wrap">
-    <%= render "layouts/big_menu" %>
-    
-    <%= render "layouts/header" %>
-    
-    <%= flashes %>
-    
-    <div id="main" class="clearfix">
-      <div id="path">
-        <!-- <p> Helper pour le chemin du site  </p> -->
+  <div id="holder">																																																																																																																																																																																																																																																																																																																				 
+    <div id="frame">
+      <%= render "layouts/big_menu" %>
+
+      <%= render "layouts/header" %>
+
+      <div id="border">
+        <div id="content">
+          <%= render "layouts/left_menu" %>
+
+          <div id="middle">
+            <%= flashes %>
+            <%= yield %>            
+          </div>
+          <%= render "layouts/right_menu"%>          
+
+        </div>
+        <div class=" clear"> </div>
+        
+        
       </div>
-      
-      <%= yield %>
-      
+
+      <%= render :partial => "layouts/footer" %>
+
     </div>
   </div>
-  
-  <%= render :partial => "layouts/footer" %>
-  
-  
+
 </body>
+
+</html>

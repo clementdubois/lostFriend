@@ -1,13 +1,9 @@
 <h1>Liste des étudiants</h1>
 
-<div class="add_member">
   <% if admin?(current_member) %>
     <%= link_to "Ajouter un membre" %>
-    <div class="add_member_form">
       <%= render "members/admin_add" %>
-    <div>
   <% end %>
-</div>
 
 <ul>
   

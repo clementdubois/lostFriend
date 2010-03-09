@@ -12,7 +12,6 @@
   <%= f.text_field :activation_code %></p>
   
   <%= link_to "Associer une promotion" %>
-  <div class="add_promotion">
      <p> 
          <%= label_tag :degree, "Diplôme" %>
          <%= select_tag "promotion1[degree1]",  options_for_select(Promotion.list_degree) %>
@@ -30,7 +29,6 @@
          <%= label_tag "Année d'obtention du diplôme", :year%>
          <%= select_tag "promotion2[year2]", options_for_select(Promotion.list_year) %>
     </p>  
-  </div>
     
   <p><%= submit_tag "Enregistrer" %></p>
 <% end %>
