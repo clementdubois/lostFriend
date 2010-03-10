@@ -1,0 +1,7 @@
+<!-- Formulaire de réponse à une conversation -->
+  <%= submit_tag "Repondre", :name => "reply" %>
+  <%= text_area_tag 'response[message]'%>
+
+  <%= hidden_field_tag 'response[conversation_id]', conv.id %>
+  
+<!-- Fin FORMULAIRE -->

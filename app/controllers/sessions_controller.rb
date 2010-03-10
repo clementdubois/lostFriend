@@ -17,20 +17,22 @@ class SessionsController < ApplicationController
       self.current_member = member
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
+      
+      redirect_to root_path
       flash[:notice] = "Identification réussi"
     else
       note_failed_signin
       @login       = params[:login]
       @remember_me = params[:remember_me]
-      redirect_to root_path()
+      redirect_to root_path
     end
   end
 
   def destroy
     logout_killing_session!
     flash[:notice] = "Vous avez été déconnecté."
-    redirect_back_or_default('/')
+    redirect_to root_path
+    
   end
 
 protected

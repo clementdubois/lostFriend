@@ -1,0 +1,34 @@
+<% form_for :member, :url => add_members_path() do |f| %>
+  <ul>
+    <li><%= f.label :first_name, "Prénom"  %>
+    <%= f.text_field :first_name %></li>
+    
+    <li><%= f.label :last_name, "Nom"  %>
+    <%= f.text_field :last_name %></li>
+  
+    <li><%= f.label :civil_state, "Etat civil"  %>
+    <%= f.text_field :civil_state %></li>
+  
+    <li><%= f.label :activation_code, "Code d'activation" %>
+    <%= f.text_field :activation_code %></li>
+  </ul>
+
+  <%= link_to "Associer une promotion" %>
+    <ul>
+         <li><%= label_tag :degree, "Diplôme" %>
+         <%= select_tag "promotion1[degree1]",  options_for_select(Promotion.list_degree) %></li>
+       
+       
+         <li><%= label_tag :year, "Année d'obtention du diplôme"%>
+         <%= select_tag "promotion1[year1]",  options_for_select(Promotion.list_year) %></li>
+       
+         <li><%= label_tag :degree, "Diplôme" %>
+         <%= select_tag "promotion2[degree2]", options_for_select(Promotion.list_degree) %></li>
+       
+       
+         <li><%= label_tag :year, "Année d'obtention du diplôme"%>
+         <%= select_tag "promotion2[year2]", options_for_select(Promotion.list_year) %></li>
+     </ul>
+    
+  <%= submit_tag "Enregistrer" %>
+<% end %>

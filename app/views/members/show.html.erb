@@ -1,4 +1,6 @@
 <h1> Page de profil</h1>
+
+<p><%= link_to "Editer mon profil", edit_member_path(current_member) %></p>
 <p>
   <%= @member.civil_state.to_s+"."+@member.first_name.to_s+" "+ @member.last_name.to_s%>
 </p>
@@ -36,16 +38,42 @@
 
 
   <%= render "show_promotion" %>
-  
 
-  <h1>Amis</h1>
-  <ul>
-  <% for friend in @friends %>
-    <li>
-      <%=h friend.first_name+" "+friend.last_name %>
-    </li>  
-  <% end %>
-  <ul>
-  
+    
+   <% if current_member = @member%> 
+      <strong>Vos amis</strong>
 
+      <ul>
+        <% for friend in @friends %>
+          <li>
+            <%=h friend.first_name+" "+friend.last_name %>
+            <%= link_to_delete_friendship "Supprimer", friend %>
+
+          </li>  
+        <% end %>
+      </ul>
+
+      <strong>Amis qui attendent votre confirmation</strong>
+      <ul>
+        <% for received in @invites_in %>
+          <li>
+            <%=h member_received(received).first_name+" "+member_received(received).last_name %>
+            <%= link_to_accept_invite "Accepter", received %>
+            <%= link_to_refuse_invite "Refuser", received %>
+          </li>  
+        <% end %>
+      </ul>
+
+
+      <strong>Amis en attente de confirmation</strong>
+      <ul>
+        <% for sent in @invites_out %>
+          <li>
+            <%=h member_sent(sent).first_name+" "+member_sent(sent).last_name %>
+            <%= link_to_cancel_invite "Annuler", sent, "êtes vous sur?" %>
+          </li>  
+        <% end %>
+      </ul>
+  
+    <% end %>
 

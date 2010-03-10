@@ -1,0 +1,25 @@
+
+<br />
+<h3> Nouveau Message </h3>
+<% form_tag member_messages_path(current_member) do  %>
+  <ul>	
+  	<li>
+    <%= label_tag :Destinataires, 'Destinataires :' %>  
+    <%= text_field_tag 'Destinataires'%>
+    </li>
+    <li>
+    <%= label_tag :Sujet, 'Sujet :' %>
+    <%= text_field_tag 'Sujet' %>
+    </li>
+    <li>
+    <%= label_tag :Message, 'Message :' %>
+    <%= text_area_tag 'Message' %>
+    </li>
+    <li>
+    <%= submit_tag "Envoyer"%>
+    </li>
+  </ul>  
+<% end %>
+
+
+

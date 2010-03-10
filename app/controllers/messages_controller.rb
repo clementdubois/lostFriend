@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
   end
 
   def choose_action
-    if params[:reply]
+    if params[:reply] || (params[:response] && mobile_device?)
       reply(params[:response])
     # elsif params[:bulk]
     #   bulk(params[:checked])

@@ -1,0 +1,20 @@
+
+
+<% if logged_in? %>
+
+  <ul>
+    <li class="arrow"> <%= link_to "Mon profil", member_path(current_member) %></li>
+    <li class="arrow"> <%= link_to "Liste des anciens étudiants", members_path() %></li>
+    <li class="arrow"> <%= link_to "Messagerie", member_messages_path(current_member) %></li>
+  </ul>
+  <ul>
+    <li class="arrow"> <%= link_to "Se déconnecter", logout_path() %></li>
+  </ul>
+<% else %>
+
+  <ul>
+     <li class="arrow"> <%= link_to "S'inscrire", signup_path() %></li>
+     <li class="arrow"> <%= link_to "Se connecter", login_path() %></li>
+  </ul>
+<% end %>
+

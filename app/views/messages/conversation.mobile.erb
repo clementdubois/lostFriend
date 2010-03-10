@@ -1,0 +1,18 @@
+<br />
+<h3> <%=h @conversation.subject %> </h3>
+
+  <% @conversation.messages.each do |message| %>
+  
+   
+  		<strong><%=h message.sender.login %></strong><br />
+  		<%=h message.body %> <br />
+      <%= "Le "+message.created_at.day.to_s+"/"+message.created_at.month.to_s+"/"+message.created_at.year.to_s+" à "+message.created_at.hour.to_s+"h"+message.created_at.min.to_s %>
+  <% end %>
+
+  
+  <% form_tag choose_action_member_messages_path(current_member) do %>
+    <%= render :partial => "response", :locals => {:conv => @conversation }%>
+  <% end %>
+  
+			
+</div>

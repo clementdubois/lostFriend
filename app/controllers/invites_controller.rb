@@ -33,7 +33,7 @@ class InvitesController < ApplicationController
     target.reload
     
     flash[:notice] = "Vous êtes devenu amis"
-    redirect_to edit_member_path(current_member)
+    redirect_to member_path(current_member)
   end
   
   def refuse
@@ -49,7 +49,7 @@ class InvitesController < ApplicationController
     target.reload
     
     flash[:notice] = "Vous avez refuser l'invitation"
-    redirect_to edit_member_path(current_member)
+    redirect_to member_path(current_member)
   end
   
   def destroy
@@ -58,10 +58,10 @@ class InvitesController < ApplicationController
     if invite.is_accepted.nil?
       invite.delete
       flash[:notice] = "L'invitation à bien été annulé"
-      redirect_to edit_member_path(current_member)
+      redirect_to member_path(current_member)
     else
       flash[:error] = "Impossible de supprimer une invitation déja accepter ou refuser"
-      redirect_to edit_member_path(current_member)
+      redirect_to member_path(current_member)
     end
       
   end
@@ -78,7 +78,7 @@ class InvitesController < ApplicationController
     target.reload
     
     flash[:notice] = "Vous n'êtes plus amis"
-    redirect_to edit_member_path(current_member)
+    redirect_to member_path(current_member)
   end
   
   private

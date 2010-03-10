@@ -27,7 +27,7 @@
       <%= submit_tag 'Editer' %>
   </div>
 
-  <h2>Votre parcours scolaire</h2>
+  <strong>Votre parcours scolaire</strong>
   <%= render "show_promotion" %>
 
   <% f.fields_for :schools do |builder| %>
@@ -37,39 +37,6 @@
 <% end %>
 
 
-<h2>Votre parcours professionnel</h2>
+<strong>Votre parcours professionnel</strong>
 
 
-<h2>Vos amis</h2>
-
-<ul>
-  <% for friend in @friends %>
-    <li>
-      <%=h friend.first_name+" "+friend.last_name %>
-      <%= link_to_delete_friendship "Supprimer", friend %>
-      
-    </li>  
-  <% end %>
-</ul>
-
-<h2>Amis qui attendent votre confirmation</h2>
-<ul>
-  <% for received in @invites_in %>
-    <li>
-      <%=h member_received(received).first_name+" "+member_received(received).last_name %>
-      <%= link_to_accept_invite "Accepter", received %>
-      <%= link_to_refuse_invite "Refuser", received %>
-    </li>  
-  <% end %>
-</ul>
-
-
-<h2>Amis en attente de confirmation</h2>
-<ul>
-  <% for sent in @invites_out %>
-    <li>
-      <%=h member_sent(sent).first_name+" "+member_sent(sent).last_name %>
-      <%= link_to_cancel_invite "Annuler", sent, "êtes vous sur?" %>
-    </li>  
-  <% end %>
-</ul>

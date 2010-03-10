@@ -7,7 +7,7 @@
     <% for conv in @conversations %>
       <%= check_box_tag 'checked[conv_ids][]', conv.id %>
       &nbsp 
-      <%= link_to "Voir Conversation", member_message_path(current_member, conv.id) %> <b><%= conv.last_message.sender.login %></b> &nbsp <%= conv.created_at.day.to_s+"/"+conv.created_at.month.to_s+"/"+conv.created_at.year.to_s+" "+conv.created_at.hour.to_s+"h"+conv.created_at.min.to_s+"m"+conv.created_at.sec.to_s+"s" %></a><br /> 
+      <%= link_to "Voir Conversation", member_message_path(current_member, conv.id) %> <b><%= conv.last_message.sender.login %></b> &nbsp <%= conv.created_at.day.to_s+"/"+conv.created_at.month.to_s+"/"+conv.created_at.year.to_s+" "+conv.created_at.hour.to_s+"h"+conv.created_at.min.to_s+"m"+conv.created_at.sec.to_s+"s" %><br /> 
       <p>&nbsp&nbsp&nbsp&nbsp <%=h conv.last_message.body %></p>
       <BR><BR>
     <% end %>

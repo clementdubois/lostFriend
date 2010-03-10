@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <title>Lost Friend.</title>
+     <%= stylesheet_link_tag "/jqtouch/jqtouch.min.css", "/jqtouch/themes/apple/theme.min.css"%>
+     <%= javascript_include_tag "/jqtouch/jquery.1.3.2.min.js", "/jqtouch/jqtouch.min.js", "mobile" %>
+     
+</head>
+
+<body>
+  <div class="current">
+    <div class="toolbar">
+      <%= link_to "Retour", nil, :class => "back" unless current_page? root_path %>
+      
+      <%= link_to "Site Complet", root_url(:mobile => 0), :class => "button", :rel => "external" %>
+      <h1><%= link_to "LostFriend", root_path %></h1>
+    </div>
+
+
+    <% unless flash.empty? %>
+      <div class="info">
+        <%= flashes %>
+      </div>
+    <% end %>
+    
+      <%= yield %>   
+        
+
+
+</body>
+
+</html>

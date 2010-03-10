@@ -4,7 +4,8 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <title>Lost Friend.</title>
-     <%= stylesheet_link_tag "style" %>
+     <%= stylesheet_link_tag "style"%>
+     
 </head>
 
 <body>
@@ -20,6 +21,11 @@
 
           <div id="middle">
             <%= flashes %>
+            <% if mobile_device? %>
+              <%= link_to "Site Complet", :mobile => "0" %>
+            <% else %>
+              <%= link_to "Site Mobile", :mobile => "1" %>
+            <% end %>
             <div> <h2>Welcome to Lost Friends</h2> <br />
               <%= yield %>   
             </div>         

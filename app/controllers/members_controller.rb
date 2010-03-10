@@ -15,6 +15,10 @@ class MembersController < ApplicationController
   
   def show
     @friends = @member.friends
+    
+    @invites_in = @member.invites_in.all(:conditions => {:is_accepted => nil})
+    @invites_out = @member.invites_out.all(:conditions => {:is_accepted => nil})
+    
   end
   
   # render new.rhtml
@@ -62,11 +66,7 @@ class MembersController < ApplicationController
   
   def edit
     @member = current_member
-    @friends = @member.friends
-    
-    @invites_in = @member.invites_in.all(:conditions => {:is_accepted => nil})
-    @invites_out = @member.invites_out.all(:conditions => {:is_accepted => nil})
-    
+
     1.times do 
       school = @member.schools.build
     end

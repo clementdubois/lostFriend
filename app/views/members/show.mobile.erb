@@ -1,0 +1,77 @@
+<h1> Page de profil</h1>
+
+<%= link_to "Editer mon profil", edit_member_path(current_member) %>
+
+
+  <%= @member.civil_state.to_s+"."+@member.first_name.to_s+" "+ @member.last_name.to_s%>
+
+<%= link_to "Faire une demande d'ami", invites_path(:member_target => @member),
+ :method => :post if can_invite?(current_member, @member) %>
+
+<% if current_member.friends.include?(@member) || @member == current_member %>
+<h2>Zone privée</h2>
+
+  <ul>
+    <li><%= label_tag 'Email : ' %>
+    <%= @member.email%></li>
+
+    <li><% if @member.region %>
+      <%= label_tag 'Region : ' %>
+      <%= @member.region %>
+    <% end %></li>
+
+    <li><% if @member.town %>
+      <%= label_tag 'ville : ' %>
+      <%= @member.town %>
+    <% end %></li>
+
+
+
+    <li><% if @member.zipcode %>
+      <%= label_tag 'Code postal : ' %>
+      <%= @member.zipcode %>
+    <% end %></li>
+  
+  </ul>
+
+<% end %>
+
+  <%= render "show_promotion" %>
+  
+
+   <% if current_member = @member%> 
+      <strong>Vos amis</strong>
+
+      <ul>
+        <% for friend in @friends %>
+          <li>
+            <%=h friend.first_name+" "+friend.last_name %>
+            <%= link_to_delete_friendship "Supprimer", friend %>
+
+          </li>  
+        <% end %>
+      </ul>
+
+      <strong>Amis qui attendent votre confirmation</strong>
+      <ul>
+        <% for received in @invites_in %>
+          <li>
+            <%=h member_received(received).first_name+" "+member_received(received).last_name %>
+            <%= link_to_accept_invite "Accepter", received %>
+            <%= link_to_refuse_invite "Refuser", received %>
+          </li>  
+        <% end %>
+      </ul>
+
+
+      <strong>Amis en attente de confirmation</strong>
+      <ul>
+        <% for sent in @invites_out %>
+          <li>
+            <%=h member_sent(sent).first_name+" "+member_sent(sent).last_name %>
+            <%= link_to_cancel_invite "Annuler", sent, "êtes vous sur?" %>
+          </li>  
+        <% end %>
+      </ul>
+  
+    <% end %>

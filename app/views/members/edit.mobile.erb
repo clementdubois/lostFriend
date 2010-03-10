@@ -1,0 +1,36 @@
+
+<% form_for([current_member]) do |f| %>
+  <%= f.error_messages %>
+  
+  <ul>
+
+    <li><%= f.label 'email', 'Email' %>
+    <%= f.text_field :email%></li>
+
+    <li><%= f.label 'last_name', 'Nom de famille' %>
+    <%= f.text_field :last_name %></li>
+
+    <li><%= f.label 'region', 'Region' %>
+    <%= f.text_field :region %></li>
+
+    <li><%= f.label 'town', 'Ville' %>
+    <%= f.text_field :town %></li>
+
+    <li><%= f.label 'zipcode', 'Code Postal' %>
+    <%= f.text_field :zipcode %></li>
+
+    <li><%= submit_tag 'Editer' %></li>
+
+  </ul>
+
+  <strong>Votre parcours scolaire</strong>
+  <%= render "show_promotion" %>
+
+  <% f.fields_for :schools do |builder| %>
+    <%= render "add_school", :f => builder %>
+  <% end %>
+
+<% end %>
+
+
+<strong>Votre parcours professionnel</strong>
