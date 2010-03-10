@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     @conversations = []
 
     Conversation.all.each do |conversation|
-      if current_member.mailbox[:inbox].has_conversation?(conversation)
+      if current_member.mailbox[:inbox].has_conversation?(conversation) || current_member.mailbox[:sentbox].has_conversation?(conversation) 
         @conversations << conversation
       end
     end
@@ -28,6 +28,15 @@ class MessagesController < ApplicationController
     end
 
     redirect_to :action => "index"
+  end
+  
+  def new
+    @conversation = Conversation.new
+  end
+  
+  def show
+    @conversation = Conversation.find(params[:id])
+    render :conversation
   end
 
   def create
@@ -53,7 +62,7 @@ class MessagesController < ApplicationController
 
   def reply(params)
 
-    current_member.reply_to_conversation(Conversation.find(params[:conv_id]), params[:Reponse])
+    current_member.reply_to_conversation(Conversation.find(params[:conversation_id]), params[:message])
 
     flash[:notice] = "Votre réponse à bien été envoyé"
   end

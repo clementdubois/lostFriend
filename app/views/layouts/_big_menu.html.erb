@@ -2,7 +2,9 @@
   <table>
     <tr>
       <td><%= link_to "Acceuil", root_path() %></td>
-      <td><%= link_to "S'inscrire", signup_path() %> </td>
+      <td><%= link_to "S'inscrire", signup_path() unless logged_in? %> </td>
+      <td><%= link_to "Se déconnecter", logout_path() if logged_in? %> </td>
+      
       <!-- <td><a href="#"> Forum </a> </td>
             <td><a href="#"> Contact </a> </td>
             <td><a href="#"> Recherche </a> </td> -->

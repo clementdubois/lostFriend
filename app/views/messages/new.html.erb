@@ -1,0 +1,36 @@
+
+<div> <h2>Welcome to Lost Friends</h2> <br />
+  <br />
+  <h3> Nouveau Message </h3>
+  <% form_tag member_messages_path(current_member) do  %>
+    <div>	
+      <div><%= label_tag :Destinataires, 'Destinataires :' %></div>
+      <div>
+        <%= text_field_tag 'Destinataires'%>
+          <br /><br /> 
+      </div>
+      </div>
+    <div>
+      <div><%= label_tag :Sujet, 'Sujet :' %></div>
+      <div>
+        <%= text_field_tag 'Sujet' %>
+          <br /><br /> 
+      </div>
+    </div>
+    <div>
+      <div><%= label_tag :Message, 'Message :' %></div>
+      <div>
+        <%= text_area_tag 'Message' %>
+        <br /><br /> 
+      </div>
+    </div>
+    <div>
+      <div COLSPAN=2>
+        <%= submit_tag "Envoyer"%>
+        <br /><br /> 
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

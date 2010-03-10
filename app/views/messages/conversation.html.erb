@@ -1,0 +1,25 @@
+<div> <h2>Welcome to Lost Friends</h2><br />
+  <br />
+  <h3> <%=h @conversation.subject %> </h3>
+  <div>
+    <% @conversation.messages.each do |message| %>
+    
+      <div class="message">
+    		<div ><strong><%=h message.sender.login %></strong></div><br />
+    		<div><%=h message.body %> </div><br /><br />
+        <div><%= "Le "+message.created_at.day.to_s+"/"+message.created_at.month.to_s+"/"+message.created_at.year.to_s+" à "+message.created_at.hour.to_s+"h"+message.created_at.min.to_s %></div>
+      </div>    
+    <% end %>
+    
+    <br /><br /><br /><br />
+    <br /><br /><br /><br />
+    <br /><br /><br /><br />
+    
+    
+    <% form_tag choose_action_member_messages_path(current_member) do %>
+      <%= render :partial => "response", :locals => {:conv => @conversation }%>
+    <% end %>
+    
+				
+  </div>
+</div>

@@ -15,7 +15,7 @@
   <%= f.text_field :last_name, :size => 14 %></p>
 
   <p><%= label_tag 'civil_state', 'Etat civil' %><br/>
-  <%= f.text_field :civil_state, :size => 14 %></p>
+  <%= f.select :civil_state, "<option>M</option><option>Mme</option>", :size => 14 %></p>
 
   <p><%= label_tag 'region', 'Region' %><br/>
   <%= f.text_field :region, :size => 14 %></p>
