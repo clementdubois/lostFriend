@@ -10,21 +10,30 @@
   <% for member in @members %>
     <li>
         <%= link_to h(member.first_name+" "+member.last_name), member_path(member.id) %>
+        <ul>
+          <li><% if admin?(current_member) %>
+            <%= link_to "Supprimer ce membre", member, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
+          <% end %></li>
         
-        <% if admin?(current_member) %>
-          <%= link_to "Supprimer ce membre", member, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
-        <% end %>
-        
-        <%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
-         :method => :post if can_invite?(current_member, member) %>
+          <%  if can_invite?(current_member, member) %>
+          <li><%= link_to "Faire une demande d'ami", invites_path(:member_target => member),
+           :method => :post %></li>
+          <% end %>
+         </ul>
     </li>
   <% end %>
   
   <% if admin?(current_member) %>
+    <h1><%= "Membres non activés" %></h1>
    <% for member_pending in @members_pending %>
       <li>
+        
         <%= member_pending.first_name+" "+member_pending.last_name %>
-        <%= link_to "Supprimer ce membre", member_pending, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
+        <ul>
+          <li>
+            <%= link_to "Supprimer ce membre", member_pending, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
+            </li>
+        </ul>
       </li>
    <% end %>
   <% end %>

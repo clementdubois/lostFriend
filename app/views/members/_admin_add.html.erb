@@ -1,14 +1,14 @@
 <% form_for :member, :url => add_members_path() do |f| %>
-  <p><%= f.label "Prénom", :first_name %>
+  <p><%= f.label :first_name, "Prénom"  %>
   <%= f.text_field :first_name %></p>
     
-  <p><%= f.label "Nom", :last_name %>
+  <p><%= f.label :last_name, "Nom"  %>
   <%= f.text_field :last_name %></p>
   
-  <p><%= f.label "Etat civil", :civil_state %>
+  <p><%= f.label :civil_state, "Etat civil"  %>
   <%= f.text_field :civil_state %></p>
   
-  <p><%= f.label "Code d'activation", :activation_code %>
+  <p><%= f.label :activation_code, "Code d'activation" %>
   <%= f.text_field :activation_code %></p>
   
   <%= link_to "Associer une promotion" %>
@@ -22,11 +22,11 @@
        </p><br />
        
        <p> 
-         <%= label_tag "Diplôme" %>
+         <%= label_tag :degree, "Diplôme" %>
          <%= select_tag "promotion2[degree2]", options_for_select(Promotion.list_degree) %>
        </p>
        <p> 
-         <%= label_tag "Année d'obtention du diplôme", :year%>
+         <%= label_tag :year, "Année d'obtention du diplôme"%>
          <%= select_tag "promotion2[year2]", options_for_select(Promotion.list_year) %>
     </p>  
     

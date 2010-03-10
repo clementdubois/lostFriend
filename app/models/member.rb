@@ -9,7 +9,7 @@ class Member < ActiveRecord::Base
   acts_as_messageable
   
   has_many :invites
-  has_many :line_curriculums, :dependent => :destroy
+  has_many :line_curriculums
   has_many :promotions, :through => :line_curriculums, :source => :place, :source_type => "Promotion"
   has_many :firms, :through => :line_curriculums, :source => :place, :source_type => "Firm"
   has_many :schools, :through => :line_curriculums, :source => :place, :source_type => "School"
