@@ -38668,3 +38668,487 @@ Rendered layouts/_left_menu (0.6ms)
 Rendered layouts/_right_menu (0.1ms)
 Rendered layouts/_footer (0.1ms)
 Completed in 31ms (View: 25, DB: 3) | 200 OK [http://localhost/?mobile=0]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-10 21:09:47) [GET]
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 31) [0m
+  [4;36;1mInvite Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.1ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 49ms (View: 18, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-10 21:09:47) [GET]
+  [4;35;1mMember Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.7ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 31) [0m
+  [4;36;1mInvite Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.2ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 134ms (View: 18, DB: 9) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index to html (for 127.0.0.1 at 2010-03-10 21:09:52) [GET]
+  [4;35;1mMember Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 31) [0m
+  [4;36;1mInvite Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.1ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 50ms (View: 17, DB: 9) | 200 OK [http://localhost/members.html]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index to xml (for 127.0.0.1 at 2010-03-10 21:09:57) [GET]
+  [4;35;1mMember Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;36;1mMember Load (1.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;35;1mLineCurriculum Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `line_curriculums`[0m
+
+ActionView::MissingTemplate (Missing template members/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-11 18:40:44) [GET]
+
+ActionController::RoutingError (No route matches "/infos/friends/5" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-11 18:40:50) [GET]
+
+ActionController::RoutingError (No route matches "/info/friends/5" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#friends (for 127.0.0.1 at 2010-03-11 18:43:56) [GET]
+  Parameters: {"id"=>"5"}
+
+LoadError (Expected /Users/clement/Ruby/work/lostFriend/app/controllers/info_controller.rb to define InfoController):
+  
+
+Rendered rescues/_trace (27.3ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#friends (for 127.0.0.1 at 2010-03-11 18:44:18) [GET]
+  Parameters: {"id"=>"5"}
+
+NameError (uninitialized constant InfoController):
+  
+
+Rendered rescues/_trace (84.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-11 18:44:46) [GET]
+
+ActionController::RoutingError (No route matches "/infos/friends/5" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InfosController#friends (for 127.0.0.1 at 2010-03-11 18:44:57) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMember Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+
+NameError (undefined local variable or method `user' for #<InfosController:0x24a9b18>):
+  app/controllers/infos_controller.rb:6:in `friends'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InfosController#friends (for 127.0.0.1 at 2010-03-11 18:45:14) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMember Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendering infos/friends
+  [4;35;1mMember Load (42.3ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.5ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+Completed in 207ms (View: 60, DB: 47) | 200 OK [http://localhost/member/friends/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-11 18:53:28) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (9.3ms)
+Rendered sessions/_new (27.1ms)
+Rendered layouts/_header (46.3ms)
+Rendered layouts/_left_menu (16.8ms)
+Rendered layouts/_right_menu (19.6ms)
+Rendered layouts/_footer (9.8ms)
+Completed in 273ms (View: 270, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-11 18:53:48) [POST]
+  Parameters: {"x"=>"0", "y"=>"0", "authenticity_token"=>"uAQIIGitfFgAJFIKpCVPvurqJA+T9iS/w8Wl0ZKdaxc=", "login"=>"admin", "password"=>"azerty"}
+  [4;35;1mMember Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 25ms (DB: 5) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-11 18:53:49) [GET]
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mMember Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+Rendered layouts/_big_menu (19.1ms)
+Rendered sessions/_new (3.1ms)
+Rendered layouts/_header (3.5ms)
+Rendered layouts/_left_menu (0.7ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 29ms (View: 23, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-11 18:53:54) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.2ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mInvite Load (0.4ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id_target = 5) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id = 5) [0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;35;1mInvite Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `invites`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+  [4;36;1mPromotion Load (38.9ms)[0m   [0;1mSELECT `promotions`.* FROM `promotions` INNER JOIN `line_curriculums` ON `promotions`.id = `line_curriculums`.place_id AND `line_curriculums`.place_type = 'Promotion' WHERE ((`line_curriculums`.member_id = 5)) [0m
+Rendered members/_show_promotion (78.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.2ms)
+Rendered layouts/_header (0.7ms)
+Rendered layouts/_left_menu (0.7ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 138ms (View: 69, DB: 47) | 200 OK [http://localhost/members/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-11 18:56:15) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMember Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;35;1mInvite Load (0.3ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id_target = 5) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id = 5) [0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+  [4;35;1mPromotion Load (0.4ms)[0m   [0mSELECT `promotions`.* FROM `promotions` INNER JOIN `line_curriculums` ON `promotions`.id = `line_curriculums`.place_id AND `line_curriculums`.place_type = 'Promotion' WHERE ((`line_curriculums`.member_id = 5)) [0m
+Rendered members/_show_promotion (8.6ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.1ms)
+Rendered layouts/_header (0.5ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 56ms (View: 28, DB: 9) | 200 OK [http://localhost/members/5]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InfosController#friends (for 127.0.0.1 at 2010-03-11 18:56:25) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMember Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (1.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendering infos/friends
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+Completed in 29ms (View: 5, DB: 5) | 200 OK [http://localhost/member/friends/5]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-11 18:56:31) [GET]
+  [4;36;1mMember Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (26.8ms)
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.1ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 317ms (View: 288, DB: 9) | 200 OK [http://localhost/members]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InvitesController#create (for 127.0.0.1 at 2010-03-11 18:56:37) [POST]
+  Parameters: {"member_target"=>"31", "authenticity_token"=>"uAQIIGitfFgAJFIKpCVPvurqJA+T9iS/w8Wl0ZKdaxc="}
+  [4;36;1mMember Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (1.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mInvite Create (0.4ms)[0m   [0mINSERT INTO `invites` (`message`, `accepted_at`, `updated_at`, `code`, `member_id`, `member_id_target`, `is_accepted`, `created_at`) VALUES('admin admin souhaite devenir votre ami', NULL, '2010-03-11 17:56:37', NULL, 5, 31, NULL, '2010-03-11 17:56:37')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/members
+Completed in 52ms (DB: 10) | 302 Found [http://localhost/invites?member_target=31]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-03-11 18:56:37) [GET]
+  [4;36;1mMember Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) LIMIT 1[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`state` = 'active') [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`state` = 'pending') [0m
+  [4;36;1mLineCurriculum Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `line_curriculums`[0m
+Rendering template within layouts/application
+Rendering members/index
+Rendered members/_admin_add (9.5ms)
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 5) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.2ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 5) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 5) [0m
+  [4;36;1mInvite Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 5) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.2ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 106ms (View: 77, DB: 8) | 200 OK [http://localhost/members]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-03-11 18:56:42) [GET]
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-11 18:56:42) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Rendered layouts/_big_menu (0.3ms)
+Rendered sessions/_new (1.8ms)
+Rendered layouts/_header (2.3ms)
+Rendered layouts/_left_menu (0.2ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-03-11 18:56:49) [POST]
+  Parameters: {"x"=>"35", "y"=>"17", "authenticity_token"=>"170Y6Mzm/dCp4HXlzsf30X+uIL+YqG8yRtHliV7JNcM=", "login"=>"avancé", "password"=>"avancé"}
+  [4;35;1mMember Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`login` = 'avancé') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 22ms (DB: 3) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-11 18:56:49) [GET]
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mMember Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+Rendered layouts/_big_menu (19.7ms)
+Rendered sessions/_new (3.3ms)
+Rendered layouts/_header (3.8ms)
+Rendered layouts/_left_menu (1.3ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 30ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-11 18:56:55) [GET]
+  Parameters: {"id"=>"31"}
+  [4;35;1mMember Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `members`[0m
+  [4;36;1mMember Load (0.8ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;36;1mInvite Load (0.4ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id_target = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id = 31) [0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id = 31) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 31) [0m
+  [4;36;1mInvite Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mPromotion Load (0.4ms)[0m   [0mSELECT `promotions`.* FROM `promotions` INNER JOIN `line_curriculums` ON `promotions`.id = `line_curriculums`.place_id AND `line_curriculums`.place_type = 'Promotion' WHERE ((`line_curriculums`.member_id = 31)) [0m
+Rendered members/_show_promotion (9.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.1ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_left_menu (0.5ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 119ms (View: 24, DB: 7) | 200 OK [http://localhost/members/31]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InvitesController#accept (for 127.0.0.1 at 2010-03-11 18:56:59) [GET]
+  Parameters: {"id"=>"38"}
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;36;1mInvite Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `invites`[0m
+  [4;35;1mInvite Load (0.7ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`id` = 38) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mInvite Update (0.7ms)[0m   [0;1mUPDATE `invites` SET `is_accepted` = 1, `updated_at` = '2010-03-11 17:56:59', `accepted_at` = '2010-03-11 17:56:59' WHERE `id` = 38[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mMember Load (0.9ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+Redirected to http://localhost:3000/members/31
+Completed in 84ms (DB: 9) | 302 Found [http://localhost/accept/38]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MembersController#show (for 127.0.0.1 at 2010-03-11 18:56:59) [GET]
+  Parameters: {"id"=>"31"}
+  [4;36;1mMember Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.3ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 31) LIMIT 1[0m
+  [4;35;1mInvite Load (0.4ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id_target = 31) [0m
+  [4;36;1mInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`is_accepted` IS NULL) AND (`invites`.member_id = 31) [0m
+Rendering template within layouts/application
+Rendering members/show
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.2ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.member_id = 31) [0m
+  [4;36;1mInvite Load (0.2ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.member_id_target = 31) [0m
+  [4;35;1mInvite Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `invites`[0m
+  [4;36;1mMember Load (0.3ms)[0m   [0;1mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 5) [0m
+  [4;36;1mPromotion Load (0.5ms)[0m   [0;1mSELECT `promotions`.* FROM `promotions` INNER JOIN `line_curriculums` ON `promotions`.id = `line_curriculums`.place_id AND `line_curriculums`.place_type = 'Promotion' WHERE ((`line_curriculums`.member_id = 31)) [0m
+Rendered members/_show_promotion (11.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mInvite Load (0.3ms)[0m   [0mSELECT * FROM `invites` WHERE (`invites`.`member_id` = 31 AND `invites`.`member_id_target` = 5) [0m
+  [4;36;1mInvite Load (0.3ms)[0m   [0;1mSELECT * FROM `invites` WHERE (`invites`.`member_id` = 5 AND `invites`.`member_id_target` = 31) [0m
+Rendered layouts/_big_menu (0.2ms)
+Rendered sessions/_new (0.2ms)
+Rendered layouts/_header (0.9ms)
+Rendered layouts/_left_menu (0.7ms)
+Rendered layouts/_right_menu (0.1ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 64ms (View: 30, DB: 9) | 200 OK [http://localhost/members/31]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InfosController#friends (for 127.0.0.1 at 2010-03-11 18:57:03) [GET]
+  Parameters: {"id"=>"31"}
+  [4;36;1mMember Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `members`[0m
+  [4;35;1mMember Load (0.4ms)[0m   [0mSELECT * FROM `members` WHERE (`members`.`id` = 31) [0m
+Rendering infos/friends
+  [4;36;1mMember Load (0.4ms)[0m   [0;1mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id WHERE ((`invites`.member_id_target = 31) AND ((is_accepted = 1))) [0m
+  [4;35;1mMember Load (0.2ms)[0m   [0mSELECT `members`.* FROM `members` INNER JOIN `invites` ON `members`.id = `invites`.member_id_target WHERE ((`invites`.member_id = 31) AND ((is_accepted = 1))) [0m
+Completed in 99ms (View: 5, DB: 4) | 200 OK [http://localhost/member/friends/31]

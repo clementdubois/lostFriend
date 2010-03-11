@@ -42,7 +42,7 @@
     
    <% if current_member = @member%> 
       <strong>Vos amis</strong>
-
+      <i><%= link_to "Voir vos amis en XML", friends_xml_path(current_member) %></i>
       <ul>
         <% for friend in @friends %>
           <li>

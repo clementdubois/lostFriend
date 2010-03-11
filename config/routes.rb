@@ -61,4 +61,6 @@ ActionController::Routing::Routes.draw do |map|
   map.refuse_invite '/refuse/:id', :controller => 'invites', :action => 'refuse'  
   map.cancel_invite '/cancel/:id', :controller => 'invites', :action => 'cancel'  
   
+  map.friends_xml '/member/friends/:id', :controller => 'infos', :action => 'friends'
+  
 end
