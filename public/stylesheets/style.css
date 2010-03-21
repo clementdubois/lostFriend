@@ -3,7 +3,7 @@
 
 * {
 	margin: 0 auto;
-	padding: 0;
+/*	padding: 0;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1em;
 	color: #000000;
@@ -386,6 +386,11 @@ font-style:italic; font-weight:bold; font-size:13px; margin:15px 20px 0 0px; pad
 .ajout {background:url(hab/ajout.png) no-repeat; display:block; height:21px; left:68px; position:absolute; text-indent:-9999px; top:112px; width:50px;}
 
 
+.label {
+	display:block;
+	float:left;
+	width:150px; 
+}
 
 
 
