@@ -1,0 +1,60 @@
+<h1>S'inscrire sur LostFriend</h1>
+<% @member.password = @member.password_confirmation = nil %>
+
+<% form_for :member, :url => members_path do |f| -%>
+<%= error_messages_for :member %>
+
+<ul>
+<fieldset>
+  <legend>Informations personnelles</legend>
+  <br />
+  <li><%= label_tag 'first_name', 'Prénom *' %><br/>
+  <%= f.text_field :first_name, :size => 14 %></li>
+
+  <li><%= label_tag 'last_name', 'Nom *' %><br/>
+  <%= f.text_field :last_name, :size => 14 %></li>
+
+  <li><%= label_tag 'civil_state', 'Etat civil' %><br/>
+  <%= f.select :civil_state, "<option>M</option><option>Mme</option>", :size => 14 %></li>
+
+  <li><%= label_tag 'region', 'Region' %><br/>
+  <%= f.text_field :region, :size => 14 %></li>
+
+  <li><%= label_tag 'town', 'Ville' %><br/>
+  <%= f.text_field :town, :size => 14 %></li>
+
+  <li><%= label_tag 'zipcode', 'Code postal' %><br/>
+  <%= f.text_field :zipcode, :size => 14 %></li>
+
+  <li><%= label_tag 'email', 'Email ' %><br/>
+  <%= f.text_field :email, :size => 14 %></li>
+  </br>
+</fieldset>
+<br />
+<fieldset>
+  <legend>Données d'authentification</legend>
+  
+  <br />
+  <li><%= label_tag 'activation_code', 'Code d\'activation *' %><br/>
+  <%= f.text_field :activation_code, :size => 14 %></li>
+
+  <li><%= label_tag 'login', 'Pseudo **' %><br/>
+  <%= f.text_field :login, :size => 14 %></li>
+
+  <li><%= label_tag 'password', 'Mot de passe *' %><br/>
+  <%= f.password_field :password, :size => 14 %></li>
+
+  <li><%= label_tag 'password_confirmation', 'Confirmer le mot de passe *' %><br/>
+  <%= f.password_field :password_confirmation, :size => 14 %></li>
+  
+</fieldset>
+
+<li><%= submit_tag "S'inscrire" %></li>
+
+<% end %>
+
+<p>Les champs suivis d'une étoile * sont obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter<p><br />
+<p>** Si vous n'indiquez pas de pseudo, votre login sera votre code d'activation par défaut</p>
+
+
+</ul>

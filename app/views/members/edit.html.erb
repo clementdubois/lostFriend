@@ -29,9 +29,11 @@
 
   <strong>Votre parcours scolaire</strong>
   <%= render "show_promotion" %>
-
+  
+  <% s = 0 %>
   <% f.fields_for :schools do |builder| %>
-    <%= render "add_school", :f => builder %>
+    <%= render "add_school", :f => builder, :s => s %>
+    <% s = s+1 %>
   <% end %>
 
 <% end %>

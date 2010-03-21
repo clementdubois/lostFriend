@@ -6,7 +6,7 @@ class Promotion < ActiveRecord::Base
     [
       '',
       'DUT Informatique',
-      'Licence Logiciel libre'
+      'Licence logiciel libre'
     ]
   end
   

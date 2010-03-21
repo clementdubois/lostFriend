@@ -11,9 +11,9 @@
     <li>
         <%= link_to h(member.first_name+" "+member.last_name), member_path(member.id) %>
         <ul>
-          <li><% if admin?(current_member) %>
-            <%= link_to "Supprimer ce membre", member, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %>
-          <% end %></li>
+          <% if admin?(current_member) %>
+            <li><%= link_to "Supprimer ce membre", member, :confirm => "Ce membre sera définitivement supprimer", :method => :delete %></li>
+          <% end %>
         
           <%  if can_invite?(current_member, member) %>
           <li><%= link_to "Faire une demande d'ami", invites_path(:member_target => member),

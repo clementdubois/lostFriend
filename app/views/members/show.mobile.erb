@@ -1,6 +1,8 @@
 <h1> Page de profil</h1>
 
-<%= link_to "Editer mon profil", edit_member_path(current_member) %>
+<% if current_member == @member%> 
+  <%= link_to "Editer mon profil", edit_member_path(current_member) %>
+<% end %>
 
 
   <%= @member.civil_state.to_s+"."+@member.first_name.to_s+" "+ @member.last_name.to_s%>
@@ -39,7 +41,7 @@
   <%= render "show_promotion" %>
   
 
-   <% if current_member = @member%> 
+   <% if current_member == @member%> 
       <strong>Vos amis</strong>
 
       <ul>

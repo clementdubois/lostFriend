@@ -1,6 +1,9 @@
 <h1> Page de profil</h1>
 
-<p><%= link_to "Editer mon profil", edit_member_path(current_member) %></p>
+<% if current_member == @member%> 
+  <p><%= link_to "Editer mon profil", edit_member_path(current_member) %></p>
+<% end %>
+
 <p>
   <%= @member.civil_state.to_s+"."+@member.first_name.to_s+" "+ @member.last_name.to_s%>
 </p>
@@ -9,71 +12,71 @@
  :method => :post if can_invite?(current_member, @member) %></p>
 
 <% if current_member.friends.include?(@member) || @member == current_member %>
-<p>Zone privée</p>
+  <p>Zone privée</p>
 
-<p>
-  <%= label_tag 'Email : ' %>
-  <%= @member.email%>
-</p>
-<p>
-  <% if @member.region %>
-    <%= label_tag 'Region : ' %>
-    <%= @member.region %>
-  <% end %>
-</p>
-<p>
-  <% if @member.town %>
-    <%= label_tag 'ville : ' %>
-    <%= @member.town %>
-  <% end %>
-</p>
+  <p>
+    <%= label_tag 'Email : ' %>
+    <%= @member.email%>
+  </p>
+  <p>
+    <% if @member.region %>
+      <%= label_tag 'Region : ' %>
+      <%= @member.region %>
+    <% end %>
+  </p>
+  <p>
+    <% if @member.town %>
+      <%= label_tag 'ville : ' %>
+      <%= @member.town %>
+    <% end %>
+  </p>
 
-<p>
-  <% if @member.zipcode %>
-    <%= label_tag 'Code postal : ' %>
-    <%= @member.zipcode %>
-  <% end %>
-</p>
+  <p>
+    <% if @member.zipcode %>
+      <%= label_tag 'Code postal : ' %>
+      <%= @member.zipcode %>
+    <% end %>
+  </p>
 <% end %>
 
 
   <%= render "show_promotion" %>
 
-    
-   <% if current_member = @member%> 
-      <strong>Vos amis</strong>
-      <i><%= link_to "Voir vos amis en XML", friends_xml_path(current_member) %></i>
-      <ul>
-        <% for friend in @friends %>
-          <li>
-            <%=h friend.first_name+" "+friend.last_name %>
-            <%= link_to_delete_friendship "Supprimer", friend %>
 
-          </li>  
-        <% end %>
-      </ul>
+<% if current_member == @member%> 
+  <strong>Vos amis</strong>
+  <i><%= link_to "Voir vos amis en XML", friends_xml_path(current_member) %></i>
+  <ul>
+    <% for friend in @friends %>
+      <li>
+        <%= link_to h(friend.first_name+" "+friend.last_name), member_path(friend) %>
+        <%= link_to_delete_friendship "Supprimer", friend %>
 
-      <strong>Amis qui attendent votre confirmation</strong>
-      <ul>
-        <% for received in @invites_in %>
-          <li>
-            <%=h member_received(received).first_name+" "+member_received(received).last_name %>
-            <%= link_to_accept_invite "Accepter", received %>
-            <%= link_to_refuse_invite "Refuser", received %>
-          </li>  
-        <% end %>
-      </ul>
-
-
-      <strong>Amis en attente de confirmation</strong>
-      <ul>
-        <% for sent in @invites_out %>
-          <li>
-            <%=h member_sent(sent).first_name+" "+member_sent(sent).last_name %>
-            <%= link_to_cancel_invite "Annuler", sent, "êtes vous sur?" %>
-          </li>  
-        <% end %>
-      </ul>
-  
+      </li>  
     <% end %>
+  </ul>
+
+  <strong>Amis qui attendent votre confirmation</strong>
+  <ul>
+    <% for received in @invites_in %>
+      <li>
+        <%= link_to h(member_received(received).first_name+" "+member_received(received).last_name), member_path(member_received(received)) %>
+        <%= link_to_accept_invite "Accepter", received %>
+        <%= link_to_refuse_invite "Refuser", received %>
+      </li>  
+    <% end %>
+  </ul>
+
+
+  <strong>Amis en attente de confirmation</strong>
+  <ul>
+    <% for sent in @invites_out %>
+      <li>
+        <%= link_to h(member_sent(sent).first_name+" "+member_sent(sent).last_name), member_path(member_sent(sent)) %>
+        <%= link_to_cancel_invite "Annuler", sent, "êtes vous sur?" %>
+      </li>  
+    <% end %>
+  </ul>
+
+<% end %>
 

@@ -29,6 +29,8 @@ class MembersController < ApplicationController
   def create    
     #Find member in the database that have the first and the activation_code indicated in the subscription field
     @member = Member.first(:conditions => {:first_name => params[:member][:first_name], :activation_code => params[:member][:activation_code]})
+    @member ||= Member.new
+    
     find = true unless @member.nil?
     find = false if @member.nil?
         
@@ -54,10 +56,10 @@ class MembersController < ApplicationController
       
       elsif(@member.nil?)     #If no member find, it means that the person who want to subscribe is not in the database 
         flash[:error] = "Nous sommes désolés mais vous n'apparaissez pas dans notre base de données d'anciens étudiants"
-        format.html { redirect_to(signup_path()) }
+        format.html { render :action => 'new' }
       elsif(@member.state == "active")     #If the state is "active" it means that his account is already active
         flash[:error] = "Votre compte est déjà activé. Veuillez vous connecter avec votre login et votre mot de passe"
-        format.html { redirect_to(login_path()) }
+        format.html { render :action => 'new' }
       end
     
     end
@@ -77,9 +79,12 @@ class MembersController < ApplicationController
     
     respond_to do |format|
       if @member.update_attributes(params[:member])
-        # unless params[:school_line][:year1].empty?
-        #   line = LineCurriculum.all(:conditions => {:member_id => current_member.id, :place_type => "School", :place_id => @member.})
-        # end
+        params[:member][:schools_attributes].each do |number|
+          @member.schools[number[0].to_i].line_curriculums.first.update_attributes(:beginning_year => params[:line][number[0]][:beginning_year],
+                                :ending_year => params[:line][number[0]][:ending_year])
+
+        end
+        
         flash[:notice] = "Vos informations ont bien été enregistrées"
         format.html { redirect_to(edit_member_path(@member)) }
         format.xml  { head :ok }
@@ -101,6 +106,7 @@ class MembersController < ApplicationController
     member.save(false)
     unless params[:promotion1][:year1].empty? && params[:promotion1][:degree1].empty?
       promotion = Promotion.find_by_degree(params[:promotion1][:degree1])
+      logger.debug promotion.to_yaml
       promo = member.line_curriculums.create(:ending_year => params[:promotion1][:year1],
                                              :beginning_year => params[:promotion1][:year1].to_i-2,
                                              :place_id => promotion.id,

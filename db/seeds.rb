@@ -14,14 +14,19 @@
 end
 
 # Generate members for testing
-admin = Member.find_or_create_by_login(:login => "admin", :state => "active", :first_name => "admin",
+admin = Member.find_or_create_by_login(:login => "admin", :first_name => "admin",
               :last_name => "act", :civil_state => "m", :email => "admin@truc.com", 
               :activation_code => "azerty", :password => "azerty", :password_confirmation => "azerty")
 
 
-activated = Member.find_or_create_by_login(:login => "activate", :state => "active", :first_name => "activate",
+activated = Member.find_or_create_by_login(:login => "activate", :first_name => "activate",
               :last_name => "act", :civil_state => "m", :email => "active@truc.com", 
               :activation_code => "azerty", :password => "azerty", :password_confirmation => "azerty")
+              
+admin.state = "active"
+admin.save
+activate.state = "active"
+activate.save
 
 pending = Member.find_or_create_by_first_name(:state => "pending", :first_name => "pending",
               :last_name => "pend", :activation_code => "azerty")
