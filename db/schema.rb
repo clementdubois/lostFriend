@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(:version => 20100309143830) do
     t.integer "recipient_id", :null => false
   end
 
+  create_table "promotion_curriculum", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "school_id"
+    t.date     "beginning_year"
+    t.date     "ending_year"
+    t.string   "degree_obtain"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "promotions", :force => true do |t|
     t.string   "degree"
     t.datetime "created_at"

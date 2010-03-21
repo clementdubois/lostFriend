@@ -1,9 +1,12 @@
 <h1>S'inscrire sur LostFriend</h1>
 <% @member.password = @member.password_confirmation = nil %>
-
+<br />
 <% form_for :member, :url => members_path do |f| -%>
 <%= error_messages_for :member %>
 
+<fieldset>
+
+</fieldset>
 
 <fieldset>
   <legend>Informations personnelles</legend>
@@ -48,12 +51,12 @@
   <%= f.password_field :password_confirmation, :size => 14 %></p>
   
 </fieldset>
-
+<br />
 <p><%= submit_tag "S'inscrire" %></p>
-
+<br />
 <% end %>
 
-<p>Les champs suivis d'une étoile * sont obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter<p><br />
+<p>* obligatoires afin de vérifier votre existance sur notre base de donnée d'étudiants et de pouvoir vous connecter<p><br />
 <p>** Si vous n'indiquez pas de pseudo, votre login sera votre code d'activation par défaut</p>
 
 

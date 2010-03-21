@@ -11,7 +11,9 @@
           <li> <%= link_to "Liste des anciens étudiants", members_path() %></li>
           <li> <%= link_to "Messagerie", member_messages_path(current_member) %></li>
         </ul>
-      
+
+      <% else %>
+				<p>Vous devez être connecté pour accéder au menu</p>
       <% end %>
       
     </div>

@@ -26,6 +26,9 @@ activated = Member.find_or_create_by_login(:login => "activate", :state => "acti
 pending = Member.find_or_create_by_first_name(:state => "pending", :first_name => "pending",
               :last_name => "pend", :activation_code => "azerty")
               
+gervais = Member.find_or_create_by_first_name(:state => "activate", :first_name => "frederic",
+              :last_name => "gervais", :activation_code => "azerty")              
+              
 admin.save
 activated.save
 pending.save(false)

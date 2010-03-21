@@ -1,34 +1,36 @@
+<br /><br />
 <% form_for :member, :url => add_members_path() do |f| %>
-  <p><%= f.label :first_name, "Prénom"  %>
+  <p><div class = "label"><%= f.label :first_name, "Prénom"  %></div>
   <%= f.text_field :first_name %></p>
     
-  <p><%= f.label :last_name, "Nom"  %>
+  <p><div class = "label"><%= f.label :last_name, "Nom"  %></div>
   <%= f.text_field :last_name %></p>
   
-  <p><%= f.label :civil_state, "Etat civil"  %>
+  <p><div class = "label"><%= f.label :civil_state, "Etat civil"  %></div>
   <%= f.text_field :civil_state %></p>
   
-  <p><%= f.label :activation_code, "Code d'activation" %>
+  <p><div class = "label"><%= f.label :activation_code, "Code d'activation" %></div>
   <%= f.text_field :activation_code %></p>
-  
-  <%= link_to "Associer une promotion" %>
-     <p> 
-         <%= label_tag :degree, "Diplôme" %>
+  <br /><br />
+  <%= link_to "Associer une promotion :" %>
+	<br /><br />
+     	 <p> 
+         <div class = "label"><%= label_tag :degree, "Diplôme" %></div>
          <%= select_tag "promotion1[degree1]",  options_for_select(Promotion.list_degree) %>
        </p>
        <p> 
-         <%= label_tag :year, "Année d'obtention du diplôme"%>
+         <div class = "label"><%= label_tag :year, "Année d'obtention du diplôme"%></div>
          <%= select_tag "promotion1[year1]",  options_for_select(Promotion.list_year) %>
-       </p><br />
+       </p><br /><br />
        
        <p> 
-         <%= label_tag :degree, "Diplôme" %>
+         <div class = "label"><%= label_tag :degree, "Diplôme" %></div>
          <%= select_tag "promotion2[degree2]", options_for_select(Promotion.list_degree) %>
        </p>
        <p> 
-         <%= label_tag :year, "Année d'obtention du diplôme"%>
+         <div class = "label"><%= label_tag :year, "Année d'obtention du diplôme"%></div>
          <%= select_tag "promotion2[year2]", options_for_select(Promotion.list_year) %>
     </p>  
-    
+    <br /><br />
   <p><%= submit_tag "Enregistrer" %></p>
 <% end %>
